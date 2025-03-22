@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TickIT", "TickIT\TickIT.csproj", "{877647E9-F309-414B-96DA-E1A5C72C80A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{877647E9-F309-414B-96DA-E1A5C72C80A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{877647E9-F309-414B-96DA-E1A5C72C80A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{877647E9-F309-414B-96DA-E1A5C72C80A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{877647E9-F309-414B-96DA-E1A5C72C80A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E6391A07-F02C-4E59-A7D9-2E214FDC1029}
+	EndGlobalSection
+EndGlobal
