@@ -2,7 +2,6 @@ C:\Users\Jakub\source\repos\TickIT\TickIT\bin\Debug\TickIT.exe.config
 C:\Users\Jakub\source\repos\TickIT\TickIT\bin\Debug\TickIT.exe
 C:\Users\Jakub\source\repos\TickIT\TickIT\bin\Debug\TickIT.pdb
 C:\Users\Jakub\source\repos\TickIT\TickIT\obj\Debug\TickIT.csproj.AssemblyReference.cache
-C:\Users\Jakub\source\repos\TickIT\TickIT\obj\Debug\TickIT.Form1.resources
 C:\Users\Jakub\source\repos\TickIT\TickIT\obj\Debug\TickIT.Properties.Resources.resources
 C:\Users\Jakub\source\repos\TickIT\TickIT\obj\Debug\TickIT.csproj.GenerateResource.cache
 C:\Users\Jakub\source\repos\TickIT\TickIT\obj\Debug\TickIT.csproj.CoreCompileInputs.cache
@@ -17,3 +16,5 @@ C:\Users\Jakub\source\repos\TickIT\TickIT\bin\Debug\EntityFramework.xml
 C:\Users\Jakub\source\repos\TickIT\TickIT\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Jakub\source\repos\TickIT\TickIT\bin\Debug\System.Data.SQLite.xml
 C:\Users\Jakub\source\repos\TickIT\TickIT\obj\Debug\TickIT.csproj.Up2Date
+C:\Users\Jakub\source\repos\TickIT\TickIT\obj\Debug\TickIT.AdminView.resources
+C:\Users\Jakub\source\repos\TickIT\TickIT\obj\Debug\TickIT.Login.resources

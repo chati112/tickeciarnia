@@ -65,7 +65,12 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "User",
+            "Technician",
+            "Admin"});
             this.comboBox1.Location = new System.Drawing.Point(617, 132);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
@@ -132,9 +137,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(614, 116);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 10;
-            this.label4.Text = "label4";
+            this.label4.Text = "Rola";
             // 
             // btn_Dodaj
             // 
@@ -154,7 +159,7 @@
             this.btn_Usun.Text = "Usuń";
             this.btn_Usun.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // AdminView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -172,7 +177,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lbl_FullName);
             this.Controls.Add(this.dataGridView_Users);
-            this.Name = "Form1";
+            this.Name = "AdminView";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Users)).EndInit();
