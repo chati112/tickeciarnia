@@ -17,4 +17,6 @@ C:\Users\Jakub\source\repos\TickIT\TickIT\bin\Debug\EntityFramework.SqlServer.xm
 C:\Users\Jakub\source\repos\TickIT\TickIT\bin\Debug\System.Data.SQLite.xml
 C:\Users\Jakub\source\repos\TickIT\TickIT\obj\Debug\TickIT.csproj.Up2Date
 C:\Users\Jakub\source\repos\TickIT\TickIT\obj\Debug\TickIT.AdminView.resources
-C:\Users\Jakub\source\repos\TickIT\TickIT\obj\Debug\TickIT.Login.resources
+C:\Users\Jakub\source\repos\TickIT\TickIT\obj\Debug\TickIT.LoginForm.resources
+C:\Users\Jakub\source\repos\TickIT\TickIT\obj\Debug\TickIT.TechnicianView.resources
+C:\Users\Jakub\source\repos\TickIT\TickIT\obj\Debug\TickIT.UserView.resources

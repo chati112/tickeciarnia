@@ -104,5 +104,10 @@ namespace TickIT
             userForm.FormClosed += (s, args) => this.Show(); 
             userForm.Show();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

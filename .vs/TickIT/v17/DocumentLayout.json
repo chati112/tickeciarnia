@@ -3,39 +3,51 @@
   "WorkspaceRootPath": "C:\\Users\\Jakub\\source\\repos\\TickIT\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|c:\\users\\jakub\\source\\repos\\tickit\\tickit\\technicianview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\technicianview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|c:\\users\\jakub\\source\\repos\\tickit\\tickit\\forms\\userview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\userview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\source\\repos\\TickIT\\tickit\\userview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\userview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|c:\\users\\jakub\\source\\repos\\tickit\\tickit\\forms\\technicianview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\technicianview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\source\\repos\\TickIT\\tickit\\adminview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\adminview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|c:\\users\\jakub\\source\\repos\\tickit\\tickit\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|c:\\users\\jakub\\source\\repos\\tickit\\tickit\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|c:\\users\\jakub\\source\\repos\\tickit\\tickit\\forms\\technicianview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\technicianview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|c:\\users\\jakub\\source\\repos\\tickit\\tickit\\technicianview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\technicianview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|c:\\users\\jakub\\source\\repos\\tickit\\tickit\\forms\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|c:\\users\\jakub\\source\\repos\\tickit\\tickit\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|c:\\users\\jakub\\source\\repos\\tickit\\tickit\\forms\\adminview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\adminview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|c:\\users\\jakub\\source\\repos\\tickit\\tickit\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|c:\\users\\jakub\\source\\repos\\tickit\\tickit\\forms\\newticketform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\newticketform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|c:\\users\\jakub\\source\\repos\\tickit\\tickit\\forms\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|c:\\users\\jakub\\source\\repos\\tickit\\tickit\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|c:\\users\\jakub\\source\\repos\\tickit\\tickit\\forms\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|TickIT||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\source\\repos\\TickIT\\tickit\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\source\\repos\\TickIT\\tickit\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -45,17 +57,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "AdminView.cs",
-              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\AdminView.cs",
-              "RelativeDocumentMoniker": "TickIT\\AdminView.cs",
-              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\AdminView.cs",
-              "RelativeToolTip": "TickIT\\AdminView.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAwBcAAAAMAAAA",
+              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Forms\\AdminView.cs",
+              "RelativeDocumentMoniker": "TickIT\\Forms\\AdminView.cs",
+              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Forms\\AdminView.cs",
+              "RelativeToolTip": "TickIT\\Forms\\AdminView.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAAAJUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-22T15:30:14.403Z",
               "IsPinned": true,
@@ -63,7 +75,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "TickIT",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\TickIT.csproj",
               "RelativeDocumentMoniker": "TickIT\\TickIT.csproj",
@@ -75,16 +87,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TechnicianView.cs",
-              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\TechnicianView.cs",
-              "RelativeDocumentMoniker": "TickIT\\TechnicianView.cs",
-              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\TechnicianView.cs",
-              "RelativeToolTip": "TickIT\\TechnicianView.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAtwBoAAAAAAAAA",
+              "DocumentIndex": 7,
+              "Title": "NewTicketForm.cs [Projekt]",
+              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Forms\\NewTicketForm.cs",
+              "RelativeDocumentMoniker": "TickIT\\Forms\\NewTicketForm.cs",
+              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Forms\\NewTicketForm.cs [Projekt]",
+              "RelativeToolTip": "TickIT\\Forms\\NewTicketForm.cs [Projekt]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T12:06:02.724Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-02T19:13:01.649Z",
+              "EditorCaption": " [Projekt]"
             },
             {
               "$type": "Bookmark",
@@ -112,74 +123,113 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Services\\EmailService.cs",
+              "RelativeDocumentMoniker": "TickIT\\Services\\EmailService.cs",
+              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Services\\EmailService.cs",
+              "RelativeToolTip": "TickIT\\Services\\EmailService.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABsAAABZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T18:08:11.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Forms\\EmailService.cs",
+              "RelativeDocumentMoniker": "TickIT\\Forms\\EmailService.cs",
+              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Forms\\EmailService.cs",
+              "RelativeToolTip": "TickIT\\Forms\\EmailService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T18:05:02.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TechnicianView.cs",
+              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Forms\\TechnicianView.cs",
+              "RelativeDocumentMoniker": "TickIT\\Forms\\TechnicianView.cs",
+              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Forms\\TechnicianView.cs",
+              "RelativeToolTip": "TickIT\\Forms\\TechnicianView.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAtwB8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T12:06:02.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "LoginForm.cs",
-              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\LoginForm.cs",
-              "RelativeDocumentMoniker": "TickIT\\LoginForm.cs",
-              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\LoginForm.cs",
-              "RelativeToolTip": "TickIT\\LoginForm.cs",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAAwDoAAAAkAAAA",
+              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Forms\\LoginForm.cs",
+              "RelativeDocumentMoniker": "TickIT\\Forms\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Forms\\LoginForm.cs",
+              "RelativeToolTip": "TickIT\\Forms\\LoginForm.cs",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAtwG0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-02T11:50:50.086Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TechnicianView.cs [Projekt]",
-              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\TechnicianView.cs",
-              "RelativeDocumentMoniker": "TickIT\\TechnicianView.cs",
-              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\TechnicianView.cs [Projekt]",
-              "RelativeToolTip": "TickIT\\TechnicianView.cs [Projekt]",
+              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Forms\\TechnicianView.cs",
+              "RelativeDocumentMoniker": "TickIT\\Forms\\TechnicianView.cs",
+              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Forms\\TechnicianView.cs [Projekt]",
+              "RelativeToolTip": "TickIT\\Forms\\TechnicianView.cs [Projekt]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-22T19:16:11.918Z",
               "EditorCaption": " [Projekt]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "UserView.cs [Projekt]",
-              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\UserView.cs",
-              "RelativeDocumentMoniker": "TickIT\\UserView.cs",
-              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\UserView.cs [Projekt]",
-              "RelativeToolTip": "TickIT\\UserView.cs [Projekt]",
+              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Forms\\UserView.cs",
+              "RelativeDocumentMoniker": "TickIT\\Forms\\UserView.cs",
+              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Forms\\UserView.cs [Projekt]",
+              "RelativeToolTip": "TickIT\\Forms\\UserView.cs [Projekt]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-22T19:15:53.621Z",
               "EditorCaption": " [Projekt]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "LoginForm.cs [Projekt]",
-              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\LoginForm.cs",
-              "RelativeDocumentMoniker": "TickIT\\LoginForm.cs",
-              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\LoginForm.cs [Projekt]",
-              "RelativeToolTip": "TickIT\\LoginForm.cs [Projekt]",
+              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Forms\\LoginForm.cs",
+              "RelativeDocumentMoniker": "TickIT\\Forms\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Forms\\LoginForm.cs [Projekt]",
+              "RelativeToolTip": "TickIT\\Forms\\LoginForm.cs [Projekt]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-22T19:15:01.555Z",
               "EditorCaption": " [Projekt]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "AdminView.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\AdminView.Designer.cs",
-              "RelativeDocumentMoniker": "TickIT\\AdminView.Designer.cs",
-              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\AdminView.Designer.cs",
-              "RelativeToolTip": "TickIT\\AdminView.Designer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAALwAAAASAAAA",
+              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Forms\\AdminView.Designer.cs",
+              "RelativeDocumentMoniker": "TickIT\\Forms\\AdminView.Designer.cs",
+              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Forms\\AdminView.Designer.cs",
+              "RelativeToolTip": "TickIT\\Forms\\AdminView.Designer.cs",
+              "ViewState": "AQIAAGgAAAAAAAAAAAAtwHwAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-22T15:40:31.132Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "AdminView.cs [Projekt]",
-              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\AdminView.cs",
-              "RelativeDocumentMoniker": "TickIT\\AdminView.cs",
-              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\AdminView.cs [Projekt]",
-              "RelativeToolTip": "TickIT\\AdminView.cs [Projekt]",
+              "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Forms\\AdminView.cs",
+              "RelativeDocumentMoniker": "TickIT\\Forms\\AdminView.cs",
+              "ToolTip": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Forms\\AdminView.cs [Projekt]",
+              "RelativeToolTip": "TickIT\\Forms\\AdminView.cs [Projekt]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-22T14:27:54.028Z",
               "EditorCaption": " [Projekt]"

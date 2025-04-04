@@ -8,23 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TickIT
+namespace TickIT.Forms
 {
-    public partial class TechnicianView : Form
+    public partial class NewTicketForm : Form
     {
-        public TechnicianView()
+        public NewTicketForm()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

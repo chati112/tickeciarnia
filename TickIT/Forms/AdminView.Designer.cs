@@ -34,13 +34,13 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btn_Dodaj = new System.Windows.Forms.Button();
-            this.btn_Usun = new System.Windows.Forms.Button();
+            this.btn_AddUser = new System.Windows.Forms.Button();
+            this.btn_DeactivateUser = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Users)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             this.dataGridView_Users.Location = new System.Drawing.Point(12, 12);
             this.dataGridView_Users.Name = "dataGridView_Users";
             this.dataGridView_Users.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_Users.Size = new System.Drawing.Size(430, 426);
+            this.dataGridView_Users.Size = new System.Drawing.Size(436, 426);
             this.dataGridView_Users.TabIndex = 0;
             // 
             // lbl_FullName
@@ -60,7 +60,7 @@
             this.lbl_FullName.Name = "lbl_FullName";
             this.lbl_FullName.Size = new System.Drawing.Size(55, 13);
             this.lbl_FullName.TabIndex = 1;
-            this.lbl_FullName.Text = "Full name:";
+            this.lbl_FullName.Text = "Firstname:";
             this.lbl_FullName.Click += new System.EventHandler(this.label1_Click);
             // 
             // comboBox1
@@ -71,16 +71,16 @@
             "User",
             "Technician",
             "Admin"});
-            this.comboBox1.Location = new System.Drawing.Point(617, 132);
+            this.comboBox1.Location = new System.Drawing.Point(491, 139);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(247, 21);
             this.comboBox1.TabIndex = 2;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(491, 53);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(247, 20);
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 3;
             // 
             // textBox2
@@ -92,18 +92,10 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(491, 132);
+            this.textBox3.Location = new System.Drawing.Point(617, 92);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 5;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(617, 90);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(121, 20);
-            this.textBox4.TabIndex = 6;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label1
             // 
@@ -117,60 +109,69 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(488, 116);
+            this.label2.Location = new System.Drawing.Point(614, 76);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "Email adress:";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(614, 76);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Password";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(614, 116);
+            this.label4.Location = new System.Drawing.Point(488, 123);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Rola";
+            this.label4.Text = "Role:";
             // 
-            // btn_Dodaj
+            // btn_AddUser
             // 
-            this.btn_Dodaj.Location = new System.Drawing.Point(491, 174);
-            this.btn_Dodaj.Name = "btn_Dodaj";
-            this.btn_Dodaj.Size = new System.Drawing.Size(247, 35);
-            this.btn_Dodaj.TabIndex = 11;
-            this.btn_Dodaj.Text = "Dodaj";
-            this.btn_Dodaj.UseVisualStyleBackColor = true;
+            this.btn_AddUser.Location = new System.Drawing.Point(491, 174);
+            this.btn_AddUser.Name = "btn_AddUser";
+            this.btn_AddUser.Size = new System.Drawing.Size(247, 35);
+            this.btn_AddUser.TabIndex = 11;
+            this.btn_AddUser.Text = "Add user";
+            this.btn_AddUser.UseVisualStyleBackColor = true;
+            this.btn_AddUser.Click += new System.EventHandler(this.btn_AddUser_Click);
             // 
-            // btn_Usun
+            // btn_DeactivateUser
             // 
-            this.btn_Usun.Location = new System.Drawing.Point(491, 229);
-            this.btn_Usun.Name = "btn_Usun";
-            this.btn_Usun.Size = new System.Drawing.Size(247, 35);
-            this.btn_Usun.TabIndex = 12;
-            this.btn_Usun.Text = "Usuń";
-            this.btn_Usun.UseVisualStyleBackColor = true;
+            this.btn_DeactivateUser.Location = new System.Drawing.Point(491, 399);
+            this.btn_DeactivateUser.Name = "btn_DeactivateUser";
+            this.btn_DeactivateUser.Size = new System.Drawing.Size(247, 35);
+            this.btn_DeactivateUser.TabIndex = 13;
+            this.btn_DeactivateUser.Text = "Deactivate user";
+            this.btn_DeactivateUser.UseVisualStyleBackColor = true;
+            this.btn_DeactivateUser.Click += new System.EventHandler(this.btn_DeactivateUser_Click);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(617, 53);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 15;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(614, 37);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Lastname:";
             // 
             // AdminView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btn_Usun);
-            this.Controls.Add(this.btn_Dodaj);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.btn_DeactivateUser);
+            this.Controls.Add(this.btn_AddUser);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -194,13 +195,13 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btn_Dodaj;
-        private System.Windows.Forms.Button btn_Usun;
+        private System.Windows.Forms.Button btn_AddUser;
+        private System.Windows.Forms.Button btn_DeactivateUser;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label3;
     }
 }
 
