@@ -54,7 +54,7 @@ namespace TickIT
                                     MessageBox.Show($"Witaj {enteredUsername}!", "Logowanie udane", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                     // Otwiera odpowiedni widok w zlaeznosci od roli
-                                    OpenUserPanel(role);
+                                    OpenOperatingPanel(role);
                                 }
                                 else
                                 {
@@ -79,7 +79,7 @@ namespace TickIT
             }
         }
 
-        private void OpenUserPanel(string role)
+        private void OpenOperatingPanel(string role)
         {
             this.Hide(); 
 
@@ -106,6 +106,11 @@ namespace TickIT
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }

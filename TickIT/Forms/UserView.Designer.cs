@@ -40,6 +40,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox_Priority = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -154,11 +155,21 @@
             this.button3.Text = "Change priority";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(469, 465);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(189, 23);
+            this.button4.TabIndex = 21;
+            this.button4.Text = "Delete selected acitvity";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // UserView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 499);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.comboBox_Priority);
             this.Controls.Add(this.button2);
@@ -172,7 +183,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "UserView";
-            this.Text = "UserView";
+            this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -195,5 +206,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox_Priority;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

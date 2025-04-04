@@ -84,6 +84,13 @@
     <Compile Include="Forms\NewTicketForm.Designer.cs">
       <DependentUpon>NewTicketForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RecoverPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RecoverPasswordForm.Designer.cs">
+      <DependentUpon>RecoverPasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\PasswordHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\TechnicianView.cs">
@@ -99,11 +106,18 @@
       <DependentUpon>UserView.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\EmailService.cs" />
+    <Compile Include="Services\UserService.cs" />
     <EmbeddedResource Include="Forms\AdminView.resx">
       <DependentUpon>AdminView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewTicketForm.resx">
+      <DependentUpon>NewTicketForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RecoverPasswordForm.resx">
+      <DependentUpon>RecoverPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -134,7 +148,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

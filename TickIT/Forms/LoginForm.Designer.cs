@@ -34,7 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_resetpwd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox_email
@@ -91,21 +91,22 @@
             this.label3.Text = "dane logowania:\r\n\r\nuser  user\r\nadmin admin\r\ntechnician technician\r\n";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // button2
+            // btn_resetpwd
             // 
-            this.button2.Location = new System.Drawing.Point(313, 285);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 43);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "reset password";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_resetpwd.Location = new System.Drawing.Point(313, 285);
+            this.btn_resetpwd.Name = "btn_resetpwd";
+            this.btn_resetpwd.Size = new System.Drawing.Size(140, 43);
+            this.btn_resetpwd.TabIndex = 6;
+            this.btn_resetpwd.Text = "reset password";
+            this.btn_resetpwd.UseVisualStyleBackColor = true;
+            this.btn_resetpwd.Click += new System.EventHandler(this.button2_Click);
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_resetpwd);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -127,6 +128,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_resetpwd;
     }
 }

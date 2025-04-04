@@ -20,3 +20,5 @@ C:\Users\Jakub\source\repos\TickIT\TickIT\obj\Debug\TickIT.AdminView.resources
 C:\Users\Jakub\source\repos\TickIT\TickIT\obj\Debug\TickIT.LoginForm.resources
 C:\Users\Jakub\source\repos\TickIT\TickIT\obj\Debug\TickIT.TechnicianView.resources
 C:\Users\Jakub\source\repos\TickIT\TickIT\obj\Debug\TickIT.UserView.resources
+C:\Users\Jakub\source\repos\TickIT\TickIT\obj\Debug\TickIT.Forms.NewTicketForm.resources
+C:\Users\Jakub\source\repos\TickIT\TickIT\obj\Debug\TickIT.Forms.RecoverPasswordForm.resources
