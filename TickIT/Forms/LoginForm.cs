@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TickIT.Forms;
 
 namespace TickIT
 {
@@ -36,17 +37,17 @@ namespace TickIT
                 {
                     conn.Open();
 
-                    string query = "SELECT Email, Password, Role FROM Users WHERE Username = @Username";
+                    string query = "SELECT Email, PasswordHash, Role FROM Users WHERE Email = @Email";
 
                     using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@Username", enteredUsername);
+                        cmd.Parameters.AddWithValue("@Email", enteredUsername);
 
                         using (SQLiteDataReader reader = cmd.ExecuteReader())
                         {
                             if (reader.Read()) 
                             {
-                                string storedPassword = reader["Password"].ToString();
+                                string storedPassword = reader["PasswordHash"].ToString();
                                 string role = reader["Role"].ToString();
 
                                 if (enteredPassword == storedPassword) // dodać hashowanie
@@ -103,16 +104,17 @@ namespace TickIT
 
             userForm.FormClosed += (s, args) => this.Show(); 
             userForm.Show();
-        }
+        }   
 
-        private void label3_Click(object sender, EventArgs e)
+        private void LoginForm_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_resetpwd_Click(object sender, EventArgs e)
         {
-
+            RecoverPasswordForm recoverPasswordForm = new RecoverPasswordForm();
+            recoverPasswordForm.ShowDialog();
         }
     }
 }

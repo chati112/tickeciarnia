@@ -39,12 +39,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.button_Anuluj);
             this.groupBox1.Controls.Add(this.textBoxEmail);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btn_SendRequest);
-            this.groupBox1.Location = new System.Drawing.Point(172, 38);
+            this.groupBox1.Location = new System.Drawing.Point(-6, -6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(499, 375);
             this.groupBox1.TabIndex = 8;
@@ -57,7 +58,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Sitka Small", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(136, 66);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(255, 35);
@@ -69,10 +70,10 @@
             this.button_Anuluj.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_Anuluj.BackColor = System.Drawing.Color.DimGray;
+            this.button_Anuluj.BackColor = System.Drawing.Color.DodgerBlue;
             this.button_Anuluj.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_Anuluj.ForeColor = System.Drawing.Color.Transparent;
-            this.button_Anuluj.Location = new System.Drawing.Point(39, 275);
+            this.button_Anuluj.Location = new System.Drawing.Point(39, 273);
             this.button_Anuluj.Name = "button_Anuluj";
             this.button_Anuluj.Size = new System.Drawing.Size(446, 46);
             this.button_Anuluj.TabIndex = 6;
@@ -97,10 +98,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(35, 144);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(450, 24);
+            this.label2.Size = new System.Drawing.Size(450, 23);
             this.label2.TabIndex = 4;
             this.label2.Text = "Please provide your business e-mail address below:";
             // 
@@ -109,7 +110,7 @@
             this.btn_SendRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_SendRequest.BackColor = System.Drawing.Color.DimGray;
+            this.btn_SendRequest.BackColor = System.Drawing.Color.DodgerBlue;
             this.btn_SendRequest.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btn_SendRequest.ForeColor = System.Drawing.Color.Transparent;
             this.btn_SendRequest.Location = new System.Drawing.Point(39, 211);
@@ -124,7 +125,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(499, 370);
             this.Controls.Add(this.groupBox1);
             this.Name = "RecoverPasswordForm";
             this.Text = "RecoverPasswordForm";
