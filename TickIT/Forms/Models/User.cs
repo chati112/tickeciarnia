@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TickIT.Forms
+namespace TickIT.Forms.Models
 {
-    internal class EmailService
+    internal class User
     {
     }
 }

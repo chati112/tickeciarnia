@@ -12,9 +12,16 @@ namespace TickIT
 {
     public partial class UserView : Form
     {
-        public UserView()
+
+        public UserView(UserControl user)
         {
             InitializeComponent();
+        
+        }
+
+        private void UserView_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
