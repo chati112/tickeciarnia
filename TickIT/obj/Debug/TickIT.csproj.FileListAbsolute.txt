@@ -47,3 +47,5 @@ C:\Users\kamil\OneDrive\Pulpit\studia\ado.net\tickeciarnia\TickIT\obj\Debug\Tick
 C:\Users\kamil\OneDrive\Pulpit\studia\ado.net\tickeciarnia\TickIT\obj\Debug\TickIT.csproj.CopyComplete
 C:\Users\kamil\OneDrive\Pulpit\studia\ado.net\tickeciarnia\TickIT\obj\Debug\TickIT.exe
 C:\Users\kamil\OneDrive\Pulpit\studia\ado.net\tickeciarnia\TickIT\obj\Debug\TickIT.pdb
+C:\Users\kamil\OneDrive\Pulpit\studia\ado.net\tickeciarnia\TickIT\bin\Debug\System.Data.OleDb.dll
+C:\Users\kamil\OneDrive\Pulpit\studia\ado.net\tickeciarnia\TickIT\bin\Debug\System.Data.OleDb.xml
