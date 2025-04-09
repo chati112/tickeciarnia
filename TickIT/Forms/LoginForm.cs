@@ -37,7 +37,7 @@ namespace TickIT
                 {
                     conn.Open();
 
-                    string query = "SELECT Email, PasswordHash, Role FROM Users WHERE Email = @Email";
+                    string query = "SELECT UserID, Email, PasswordHash, Role FROM Users WHERE Email = @Email";
 
                     using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                     {
@@ -49,13 +49,14 @@ namespace TickIT
                             {
                                 string storedPassword = reader["PasswordHash"].ToString();
                                 string role = reader["Role"].ToString();
+                                int userID = Convert.ToInt32(reader["UserID"]);
 
                                 if (enteredPassword == storedPassword) // dodać hashowanie
                                 {
                                     MessageBox.Show($"Witaj {enteredUsername}!", "Logowanie udane", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                     // Otwiera odpowiedni widok w zlaeznosci od roli
-                                    OpenOperatingPanel(role);
+                                    OpenOperatingPanel(role, userID);
                                 }
                                 else
                                 {
@@ -80,7 +81,7 @@ namespace TickIT
             }
         }
 
-        private void OpenOperatingPanel(string role)
+        private void OpenOperatingPanel(string role, int userID)
         {
             this.Hide(); 
 
@@ -92,7 +93,7 @@ namespace TickIT
                     userForm = new UserView();
                     break;
                 case "Technician":
-                    userForm = new TechnicianView();
+                    userForm = new TechnicianView(userID);
                     break;
                 case "Admin":
                     userForm = new AdminView();

@@ -36,10 +36,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonAssign = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.buttonChangeStatus = new System.Windows.Forms.Button();
+            this.comboBoxStatus = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -76,12 +76,12 @@
             this.textBox1.Location = new System.Drawing.Point(359, 326);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(288, 100);
+            this.textBox1.Size = new System.Drawing.Size(288, 112);
             this.textBox1.TabIndex = 4;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(359, 432);
+            this.button1.Location = new System.Drawing.Point(359, 444);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(288, 23);
             this.button1.TabIndex = 5;
@@ -114,57 +114,59 @@
             this.dataGridView3.Size = new System.Drawing.Size(469, 229);
             this.dataGridView3.TabIndex = 8;
             // 
-            // button2
+            // buttonAssign
             // 
-            this.button2.Location = new System.Drawing.Point(15, 310);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(218, 35);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Assign to me";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonAssign.Location = new System.Drawing.Point(15, 310);
+            this.buttonAssign.Name = "buttonAssign";
+            this.buttonAssign.Size = new System.Drawing.Size(218, 35);
+            this.buttonAssign.TabIndex = 9;
+            this.buttonAssign.Text = "Assign to me";
+            this.buttonAssign.UseVisualStyleBackColor = true;
+            this.buttonAssign.Click += new System.EventHandler(this.buttonAssign_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(15, 420);
+            this.button3.Location = new System.Drawing.Point(15, 432);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(218, 35);
             this.button3.TabIndex = 10;
             this.button3.Text = "Resolve";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // buttonChangeStatus
             // 
-            this.button4.Location = new System.Drawing.Point(15, 378);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(218, 23);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Change status";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonChangeStatus.Location = new System.Drawing.Point(15, 364);
+            this.buttonChangeStatus.Name = "buttonChangeStatus";
+            this.buttonChangeStatus.Size = new System.Drawing.Size(218, 23);
+            this.buttonChangeStatus.TabIndex = 11;
+            this.buttonChangeStatus.Text = "Change status";
+            this.buttonChangeStatus.UseVisualStyleBackColor = true;
+            this.buttonChangeStatus.Click += new System.EventHandler(this.buttonChangeStatus_Click);
             // 
-            // comboBox1
+            // comboBoxStatus
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxStatus.FormattingEnabled = true;
+            this.comboBoxStatus.Items.AddRange(new object[] {
             "New, Open",
             "In progress",
             "Pending, Client action required",
             "Pending, Monitoring incident",
             "Resolved, Closed"});
-            this.comboBox1.Location = new System.Drawing.Point(15, 351);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(218, 21);
-            this.comboBox1.TabIndex = 12;
+            this.comboBoxStatus.Location = new System.Drawing.Point(15, 393);
+            this.comboBoxStatus.Name = "comboBoxStatus";
+            this.comboBoxStatus.Size = new System.Drawing.Size(218, 21);
+            this.comboBoxStatus.TabIndex = 12;
             // 
             // TechnicianView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1279, 487);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.comboBoxStatus);
+            this.Controls.Add(this.buttonChangeStatus);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonAssign);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -193,9 +195,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonAssign;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button buttonChangeStatus;
+        private System.Windows.Forms.ComboBox comboBoxStatus;
     }
 }
