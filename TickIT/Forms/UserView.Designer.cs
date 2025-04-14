@@ -37,10 +37,11 @@
             this.dataGridViewTickets = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_newticket = new System.Windows.Forms.Button();
             this.comboBox_Priority = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.btn_reopen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTickets)).BeginInit();
@@ -66,7 +67,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(466, 334);
+            this.label3.Location = new System.Drawing.Point(445, 334);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 15;
@@ -74,20 +75,21 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(469, 436);
+            this.button1.Location = new System.Drawing.Point(448, 433);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(189, 23);
+            this.button1.Size = new System.Drawing.Size(231, 23);
             this.button1.TabIndex = 14;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(469, 350);
+            this.textBox1.Location = new System.Drawing.Point(448, 350);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(189, 65);
+            this.textBox1.Size = new System.Drawing.Size(231, 77);
             this.textBox1.TabIndex = 13;
+            this.textBox1.Text = "put you notes here ...";
             // 
             // dataGridView2
             // 
@@ -123,14 +125,15 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Your tickets:";
             // 
-            // button2
+            // btn_newticket
             // 
-            this.button2.Location = new System.Drawing.Point(695, 350);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(189, 106);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Create new ticket";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_newticket.Location = new System.Drawing.Point(695, 350);
+            this.btn_newticket.Name = "btn_newticket";
+            this.btn_newticket.Size = new System.Drawing.Size(189, 106);
+            this.btn_newticket.TabIndex = 18;
+            this.btn_newticket.Text = "Create new ticket";
+            this.btn_newticket.UseVisualStyleBackColor = true;
+            this.btn_newticket.Click += new System.EventHandler(this.button2_Click);
             // 
             // comboBox_Priority
             // 
@@ -141,14 +144,14 @@
             "Medium",
             "High",
             "Critical"});
-            this.comboBox_Priority.Location = new System.Drawing.Point(305, 380);
+            this.comboBox_Priority.Location = new System.Drawing.Point(310, 350);
             this.comboBox_Priority.Name = "comboBox_Priority";
             this.comboBox_Priority.Size = new System.Drawing.Size(121, 21);
             this.comboBox_Priority.TabIndex = 19;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(305, 407);
+            this.button3.Location = new System.Drawing.Point(310, 377);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(121, 23);
             this.button3.TabIndex = 20;
@@ -157,22 +160,32 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(469, 465);
+            this.button4.Location = new System.Drawing.Point(448, 465);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(189, 23);
+            this.button4.Size = new System.Drawing.Size(231, 23);
             this.button4.TabIndex = 21;
             this.button4.Text = "Delete selected acitvity";
             this.button4.UseVisualStyleBackColor = true;
+            // 
+            // btn_reopen
+            // 
+            this.btn_reopen.Location = new System.Drawing.Point(310, 424);
+            this.btn_reopen.Name = "btn_reopen";
+            this.btn_reopen.Size = new System.Drawing.Size(121, 63);
+            this.btn_reopen.TabIndex = 22;
+            this.btn_reopen.Text = "reopen selected ticket";
+            this.btn_reopen.UseVisualStyleBackColor = true;
             // 
             // UserView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 499);
+            this.Controls.Add(this.btn_reopen);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.comboBox_Priority);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_newticket);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -204,9 +217,10 @@
         private System.Windows.Forms.DataGridView dataGridViewTickets;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_newticket;
         private System.Windows.Forms.ComboBox comboBox_Priority;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_reopen;
     }
 }

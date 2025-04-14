@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TickIT.Forms;
 
 namespace TickIT
 {
@@ -21,6 +22,13 @@ namespace TickIT
 
         private void UserView_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            NewTicketForm newTicketForm = new NewTicketForm();
+            newTicketForm.ShowDialog();
 
         }
     }

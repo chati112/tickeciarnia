@@ -16,5 +16,10 @@ namespace TickIT.Forms
         {
             InitializeComponent();
         }
+
+        private void NewTicketForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

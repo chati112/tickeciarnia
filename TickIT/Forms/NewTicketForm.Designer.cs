@@ -98,7 +98,12 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Low",
+            "Medium",
+            "High"});
             this.comboBox1.Location = new System.Drawing.Point(111, 202);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
@@ -166,6 +171,7 @@
             this.Controls.Add(this.label1);
             this.Name = "NewTicketForm";
             this.Text = "NewTicketForm";
+            this.Load += new System.EventHandler(this.NewTicketForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

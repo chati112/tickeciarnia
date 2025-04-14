@@ -17,6 +17,8 @@ namespace TickIT
         public LoginForm()
         {
             InitializeComponent();
+            this.AcceptButton = button1;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -117,5 +119,6 @@ namespace TickIT
             RecoverPasswordForm recoverPasswordForm = new RecoverPasswordForm();
             recoverPasswordForm.ShowDialog();
         }
+
     }
 }
