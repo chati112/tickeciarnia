@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
@@ -50,7 +51,7 @@ namespace TickIT
                             if (row.Cells["IsInactive"].Value != null && Convert.ToInt32(row.Cells["IsInactive"].Value) == 1)
                             {
                                 row.DefaultCellStyle.BackColor = Color.LightGray; // Szare tło dla nieaktywnych
-                                row.DefaultCellStyle.ForeColor = Color.DarkGray;  // Przyciemnienie tekstu dla czytelności
+                                row.DefaultCellStyle.ForeColor = Color.DarkGray;  
                             }
                         }
                     }
@@ -89,20 +90,21 @@ namespace TickIT
             dataGridView_Users.GridColor = Color.Black;
         }
 
-
-
         private void btn_DeactivateUser_Click(object sender, EventArgs e)
         {
-
             if (dataGridView_Users.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Proszę zaznaczyć użytkownika do dezaktywacji.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Proszę zaznaczyć użytkownika do aktywacji/dezaktywacji.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             int userId = Convert.ToInt32(dataGridView_Users.SelectedRows[0].Cells["UserID"].Value);
+            int isInactive = Convert.ToInt32(dataGridView_Users.SelectedRows[0].Cells["IsInactive"].Value);
 
-            DialogResult result = MessageBox.Show("Czy na pewno chcesz dezaktywować tego użytkownika?",
+            string action = isInactive == 1 ? "aktywować" : "dezaktywować";
+            int newStatus = isInactive == 1 ? 0 : 1;
+
+            DialogResult result = MessageBox.Show($"Czy na pewno chcesz {action} tego użytkownika?",
                 "Potwierdzenie", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.No)
@@ -116,21 +118,23 @@ namespace TickIT
                 {
                     conn.Open();
 
-                    string query = "UPDATE Users SET IsInactive = 1 WHERE UserID = @UserID";
+                    string query = "UPDATE Users SET IsInactive = @NewStatus WHERE UserID = @UserID";
 
                     using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                     {
+                        cmd.Parameters.AddWithValue("@NewStatus", newStatus);
                         cmd.Parameters.AddWithValue("@UserID", userId);
                         int rowsAffected = cmd.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Użytkownik został dezaktywowany.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            string msg = newStatus == 1 ? "Użytkownik został dezaktywowany." : "Użytkownik został aktywowany.";
+                            MessageBox.Show(msg, "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             RefreshDataGridView();
                         }
                         else
                         {
-                            MessageBox.Show("Nie udało się dezaktywować użytkownika.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Nie udało się zaktualizować użytkownika.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
@@ -145,17 +149,19 @@ namespace TickIT
             }
         }
 
+
+
+
         private void btn_AddUser_Click(object sender, EventArgs e)
         {
             string connectionString = "Data Source=TickIT.db;Version=3;";
 
-            // Dane z formularza
             string firstName = txtFirstName.Text.Trim();
             string lastName = txtLastName.Text.Trim();
             string email = txtEmail.Text.Trim();
             string phone = txtPhone.Text.Trim();
             string role = cmbRole.SelectedItem?.ToString();
-            string password = "1234"; // domyślne hasło – możesz tu dodać generator
+            string password = "1234"; 
 
             if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName) ||
                 string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(role))
@@ -170,7 +176,6 @@ namespace TickIT
                 {
                     conn.Open();
 
-                    // Sprawdzenie, czy użytkownik o takim emailu już istnieje
                     string checkQuery = "SELECT COUNT(*) FROM Users WHERE Email = @Email";
                     using (SQLiteCommand checkCmd = new SQLiteCommand(checkQuery, conn))
                     {
@@ -195,14 +200,14 @@ namespace TickIT
                         adapter.InsertCommand.Parameters.AddWithValue("@Email", email);
                         adapter.InsertCommand.Parameters.AddWithValue("@Phone", phone);
                         adapter.InsertCommand.Parameters.AddWithValue("@Role", role);
-                        adapter.InsertCommand.Parameters.AddWithValue("@PasswordHash", password); // możesz hashować
+                        adapter.InsertCommand.Parameters.AddWithValue("@PasswordHash", password); 
 
                         int rows = adapter.InsertCommand.ExecuteNonQuery();
 
                         if (rows > 0)
                         {
                             MessageBox.Show("Użytkownik został dodany.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            RefreshDataGridView(); // odświeżenie grida
+                            RefreshDataGridView(); 
                         }
                         else
                         {
@@ -227,18 +232,18 @@ namespace TickIT
             {
                 DataGridViewRow row = dataGridView_Users.Rows[e.RowIndex];
 
-                numericUpDown3.Value = Convert.ToInt32(row.Cells["UserID"].Value);
-                txtFirstName.Text = row.Cells["FirstName"].Value.ToString();
-                txtLastName.Text = row.Cells["LastName"].Value.ToString();
-                txtEmail.Text = row.Cells["Email"].Value.ToString();
-                txtPhone.Text = row.Cells["Phone"].Value.ToString();
-                cmbRole.Text = row.Cells["Role"].Value.ToString();
+                numericUpDownID_edit.Value = Convert.ToInt32(row.Cells["UserID"].Value);
+                textBoxFirstname_edit.Text = row.Cells["FirstName"].Value.ToString();
+                textBoxLastName_edit.Text = row.Cells["LastName"].Value.ToString();
+                textBoxEmail_edit.Text = row.Cells["Email"].Value.ToString();
+                textBoxPhone_edit.Text = row.Cells["Phone"].Value.ToString();
+                comboBoxRole_edit.Text = row.Cells["Role"].Value.ToString();
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int userId = (int)numericUpDown3.Value;
+            int userId = (int)numericUpDownID_edit.Value;
             if (userId == 0)
             {
                 MessageBox.Show("Najpierw wybierz użytkownika z listy.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);

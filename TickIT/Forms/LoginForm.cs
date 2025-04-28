@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
@@ -39,7 +40,7 @@ namespace TickIT
                 {
                     conn.Open();
 
-                    string query = "SELECT UserID, Email, PasswordHash, Role FROM Users WHERE Email = @Email";
+                    string query = "SELECT UserID, Email, PasswordHash, Role, IsInactive, IsPasswordChangeRequired FROM Users WHERE Email = @Email";
 
                     using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                     {
@@ -47,18 +48,34 @@ namespace TickIT
 
                         using (SQLiteDataReader reader = cmd.ExecuteReader())
                         {
-                            if (reader.Read()) 
+                            if (reader.Read())
                             {
+                                int isInactive = Convert.ToInt32(reader["IsInactive"]);
+                                if (isInactive == 1)
+                                {
+                                    MessageBox.Show("Twoje konto jest nieaktywne.\nSkontaktuj się z administratorem w celu aktywacji.", "Konto zablokowane", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    return;
+                                }
+
                                 string storedPassword = reader["PasswordHash"].ToString();
                                 string role = reader["Role"].ToString();
                                 int userID = Convert.ToInt32(reader["UserID"]);
+                                int isPasswordChangeRequired = Convert.ToInt32(reader["IsPasswordChangeRequired"]);
 
-                                if (enteredPassword == storedPassword) // dodać hashowanie
+                                if (enteredPassword == storedPassword) 
                                 {
-                                    MessageBox.Show($"Witaj {enteredUsername}!", "Logowanie udane", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                    // Otwiera odpowiedni widok w zlaeznosci od roli
-                                    OpenOperatingPanel(role, userID);
+                                    if (isPasswordChangeRequired == 1)
+                                    {
+                                        MessageBox.Show("Zostałeś zalogowany, ale musisz zmienić hasło.", "Wymagana zmiana hasła", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        ChangePasswordForm changePasswordForm = new ChangePasswordForm();
+                                        changePasswordForm.Show();
+                                        this.Hide(); 
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show($"Witaj {enteredUsername}!", "Logowanie udane", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        OpenOperatingPanel(role, userID);
+                                    }
                                 }
                                 else
                                 {
@@ -83,6 +100,7 @@ namespace TickIT
             }
         }
 
+
         private void OpenOperatingPanel(string role, int userID)
         {
             this.Hide(); 
@@ -92,7 +110,7 @@ namespace TickIT
             switch (role)
             {
                 case "User":
-                    userForm = new UserView();
+                    userForm = new UserView(userID);
                     break;
                 case "Technician":
                     userForm = new TechnicianView(userID);
@@ -120,5 +138,9 @@ namespace TickIT
             recoverPasswordForm.ShowDialog();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+  
+        }
     }
 }

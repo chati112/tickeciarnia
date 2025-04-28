@@ -75,3 +75,5 @@ C:\Users\Jakub\OneDrive\Pulpit\tickeciarnia 14.04\tickeciarnia\TickIT\obj\Debug\
 C:\Users\Jakub\OneDrive\Pulpit\tickeciarnia 14.04\tickeciarnia\TickIT\obj\Debug\TickIT.csproj.Up2Date
 C:\Users\Jakub\OneDrive\Pulpit\tickeciarnia 14.04\tickeciarnia\TickIT\obj\Debug\TickIT.exe
 C:\Users\Jakub\OneDrive\Pulpit\tickeciarnia 14.04\tickeciarnia\TickIT\obj\Debug\TickIT.pdb
+C:\Users\Jakub\OneDrive\Pulpit\tickeciarnia 14.04\tickeciarnia\TickIT\obj\Debug\TickIT.Forms.ChangePasswordForm.resources
+C:\Users\Jakub\OneDrive\Pulpit\tickeciarnia 14.04\tickeciarnia\TickIT\obj\Debug\TickIT.Forms.user.ReopenForm.resources

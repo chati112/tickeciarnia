@@ -41,26 +41,26 @@
             this.btn_DeactivateUser = new System.Windows.Forms.Button();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxLastName_edit = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBoxEmail_edit = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownID_edit = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBoxFirstname_edit = new System.Windows.Forms.TextBox();
+            this.comboBoxRole_edit = new System.Windows.Forms.ComboBox();
+            this.textBoxPhone_edit = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
@@ -71,7 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Users)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownID_edit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownID)).BeginInit();
             this.panel4.SuspendLayout();
@@ -95,7 +95,6 @@
             this.lbl_FullName.Size = new System.Drawing.Size(55, 13);
             this.lbl_FullName.TabIndex = 1;
             this.lbl_FullName.Text = "Firstname:";
-            this.lbl_FullName.Click += new System.EventHandler(this.label1_Click);
             // 
             // cmbRole
             // 
@@ -171,11 +170,11 @@
             // btn_DeactivateUser
             // 
             this.btn_DeactivateUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_DeactivateUser.Location = new System.Drawing.Point(135, 15);
+            this.btn_DeactivateUser.Location = new System.Drawing.Point(109, 15);
             this.btn_DeactivateUser.Name = "btn_DeactivateUser";
-            this.btn_DeactivateUser.Size = new System.Drawing.Size(117, 35);
+            this.btn_DeactivateUser.Size = new System.Drawing.Size(143, 35);
             this.btn_DeactivateUser.TabIndex = 13;
-            this.btn_DeactivateUser.Text = "Deactivate user";
+            this.btn_DeactivateUser.Text = "Deactivate / Activate user";
             this.btn_DeactivateUser.UseVisualStyleBackColor = false;
             this.btn_DeactivateUser.Click += new System.EventHandler(this.btn_DeactivateUser_Click);
             // 
@@ -195,12 +194,12 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Lastname:";
             // 
-            // textBox5
+            // textBoxLastName_edit
             // 
-            this.textBox5.Location = new System.Drawing.Point(617, 249);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 26;
+            this.textBoxLastName_edit.Location = new System.Drawing.Point(617, 249);
+            this.textBoxLastName_edit.Name = "textBoxLastName_edit";
+            this.textBoxLastName_edit.Size = new System.Drawing.Size(100, 20);
+            this.textBoxLastName_edit.TabIndex = 26;
             // 
             // label5
             // 
@@ -248,12 +247,12 @@
             this.label8.TabIndex = 21;
             this.label8.Text = "Phone:";
             // 
-            // textBox6
+            // textBoxEmail_edit
             // 
-            this.textBox6.Location = new System.Drawing.Point(617, 288);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 20;
+            this.textBoxEmail_edit.Location = new System.Drawing.Point(617, 288);
+            this.textBoxEmail_edit.Name = "textBoxEmail_edit";
+            this.textBoxEmail_edit.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEmail_edit.TabIndex = 20;
             // 
             // textBox7
             // 
@@ -313,26 +312,26 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Moccasin;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.numericUpDown3);
+            this.panel2.Controls.Add(this.numericUpDownID_edit);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.textBox9);
-            this.panel2.Controls.Add(this.comboBox3);
-            this.panel2.Controls.Add(this.textBox10);
+            this.panel2.Controls.Add(this.textBoxFirstname_edit);
+            this.panel2.Controls.Add(this.comboBoxRole_edit);
+            this.panel2.Controls.Add(this.textBoxPhone_edit);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Location = new System.Drawing.Point(-1, -1);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(263, 185);
             this.panel2.TabIndex = 30;
             // 
-            // numericUpDown3
+            // numericUpDownID_edit
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(57, 18);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.ReadOnly = true;
-            this.numericUpDown3.Size = new System.Drawing.Size(61, 20);
-            this.numericUpDown3.TabIndex = 29;
+            this.numericUpDownID_edit.Location = new System.Drawing.Point(57, 18);
+            this.numericUpDownID_edit.Name = "numericUpDownID_edit";
+            this.numericUpDownID_edit.ReadOnly = true;
+            this.numericUpDownID_edit.Size = new System.Drawing.Size(61, 20);
+            this.numericUpDownID_edit.TabIndex = 29;
             // 
             // label12
             // 
@@ -361,32 +360,32 @@
             this.label14.TabIndex = 16;
             this.label14.Text = "Firstname:";
             // 
-            // textBox9
+            // textBoxFirstname_edit
             // 
-            this.textBox9.Location = new System.Drawing.Point(18, 59);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 18;
+            this.textBoxFirstname_edit.Location = new System.Drawing.Point(18, 59);
+            this.textBoxFirstname_edit.Name = "textBoxFirstname_edit";
+            this.textBoxFirstname_edit.Size = new System.Drawing.Size(100, 20);
+            this.textBoxFirstname_edit.TabIndex = 18;
             // 
-            // comboBox3
+            // comboBoxRole_edit
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.comboBoxRole_edit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxRole_edit.FormattingEnabled = true;
+            this.comboBoxRole_edit.Items.AddRange(new object[] {
             "User",
             "Technician",
             "Admin"});
-            this.comboBox3.Location = new System.Drawing.Point(134, 103);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 17;
+            this.comboBoxRole_edit.Location = new System.Drawing.Point(134, 103);
+            this.comboBoxRole_edit.Name = "comboBoxRole_edit";
+            this.comboBoxRole_edit.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxRole_edit.TabIndex = 17;
             // 
-            // textBox10
+            // textBoxPhone_edit
             // 
-            this.textBox10.Location = new System.Drawing.Point(18, 104);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 19;
+            this.textBoxPhone_edit.Location = new System.Drawing.Point(18, 104);
+            this.textBoxPhone_edit.Name = "textBoxPhone_edit";
+            this.textBoxPhone_edit.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPhone_edit.TabIndex = 19;
             // 
             // label15
             // 
@@ -415,7 +414,7 @@
             // 
             // numericUpDownID
             // 
-            this.numericUpDownID.Location = new System.Drawing.Point(58, 24);
+            this.numericUpDownID.Location = new System.Drawing.Point(32, 24);
             this.numericUpDownID.Name = "numericUpDownID";
             this.numericUpDownID.Size = new System.Drawing.Size(61, 20);
             this.numericUpDownID.TabIndex = 31;
@@ -423,7 +422,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(25, 26);
+            this.label11.Location = new System.Drawing.Point(5, 26);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(21, 13);
             this.label11.TabIndex = 30;
@@ -454,11 +453,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 509);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBoxLastName_edit);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textBoxEmail_edit);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_AddUser);
@@ -482,7 +481,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownID_edit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownID)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -507,13 +506,13 @@
         private System.Windows.Forms.Button btn_DeactivateUser;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxLastName_edit;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBoxEmail_edit;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.ComboBox comboBox2;
@@ -524,13 +523,13 @@
         private System.Windows.Forms.NumericUpDown numericUpDownID;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown numericUpDownID_edit;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBoxFirstname_edit;
+        private System.Windows.Forms.ComboBox comboBoxRole_edit;
+        private System.Windows.Forms.TextBox textBoxPhone_edit;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
