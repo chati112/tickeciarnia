@@ -19,7 +19,6 @@ namespace TickIT
         {
             InitializeComponent();
             this.AcceptButton = button1;
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -73,7 +72,6 @@ namespace TickIT
                                     }
                                     else
                                     {
-                                        MessageBox.Show($"Witaj {enteredUsername}!", "Logowanie udane", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         OpenOperatingPanel(role, userID);
                                     }
                                 }

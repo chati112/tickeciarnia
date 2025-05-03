@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TickIT.Forms;
+using TickIT.Forms.user;
 
 
 namespace TickIT
@@ -361,9 +362,13 @@ namespace TickIT
 
         private void btn_reopen_Click(object sender, EventArgs e)
         {
-
-            ReopenForm reopenForm = new ReopenForm();
+            ReopenForm reopenForm = new ReopenForm(currentUserId);
             reopenForm.ShowDialog();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            LoadUserTickets(currentUserId);
         }
     }
 
