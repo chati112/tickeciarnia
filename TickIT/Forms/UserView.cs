@@ -120,7 +120,6 @@ namespace TickIT
                     string queryDetails = @"
                     SELECT 
                     T.TicketID AS ID, 
-                    T.Description AS Description, 
                     T.CreatedDate AS 'Reported date', 
                     T.ResolvedDate AS 'Resolved date', 
                     U1.FirstName || ' ' || U1.LastName AS Customer,
