@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Data.SQLite;
 using System.Windows.Forms.VisualStyles;
+using System.Security.Cryptography.X509Certificates;
+
 
 namespace TickIT
 {
@@ -32,8 +34,6 @@ namespace TickIT
             LoadAllTicketsForTechnician();
             dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView3.CellClick += dataGridView3_CellClick;
-            LoadStatusOptions();
-
 
         }
 
@@ -163,16 +163,20 @@ namespace TickIT
                     conn.Open();
 
                     string query = @"
-                SELECT 
-                    T.TicketID,
-                    T.Title,
-                    T.CreatedDate,
-                    P.PriorityName,
-                    S.StatusName,
-                    T.ResolvedDate
-                FROM Tickets T
-                INNER JOIN Priorities P ON T.PriorityID = P.PriorityID
-                INNER JOIN Statuses S ON T.StatusID = S.StatusID";
+                     SELECT 
+                            T.TicketID,
+                            T.Title,
+                            T.CreatedDate,
+                            P.PriorityName,
+                            S.StatusName,
+                            T.ResolvedDate
+                        FROM Tickets T
+                        INNER JOIN Priorities P ON T.PriorityID = P.PriorityID
+                        INNER JOIN Statuses S ON T.StatusID = S.StatusID
+                        ORDER BY 
+                            CASE WHEN S.StatusName = 'Resolved' THEN 1 ELSE 0 END,
+                            T.CreatedDate ASC";
+
 
                     using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, conn))
                     {
@@ -232,175 +236,61 @@ namespace TickIT
 
         private void buttonAssign_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 0)
+            if (dataGridView1.CurrentRow == null)
             {
-                MessageBox.Show("Proszę wybrać zgłoszenie do przypisania.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nie wybrano żadnego zgłoszenia.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            int ticketID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
-            string connectionString = "Data Source=TickIT.db;Version=3;";
+            int ticketId = Convert.ToInt32(dataGridView1.CurrentRow.Cells["TicketID"].Value);
+            int technicianId = loggedUserID;
 
-            var adapter = new SQLiteDataAdapter();
-            var connection = new SQLiteConnection(connectionString);
-
-            var command = new SQLiteCommand("UPDATE Tickets SET TechnicianID = @TechnicianID WHERE TicketID = @TicketID");
-
-            command.Parameters.AddWithValue("@TechnicianID", loggedUserID);
-            command.Parameters.AddWithValue("@TicketID", ticketID);
-
-            try
-            {
-                connection.Open();
-                adapter.InsertCommand = command;
-                adapter.InsertCommand.Connection = connection;
-                int rowsAffected = adapter.InsertCommand.ExecuteNonQuery();
-
-                if (rowsAffected > 0)
-                {
-                    MessageBox.Show("Zgłoszenie zostało przypisane.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Nie udało się przypisać zgłoszenia.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Błąd: " + ex.Message, "Błąd przypisania", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-            TechnicianView_Load(sender, e);
-        }
-
-
-
-        private void LoadStatusOptions()
-        {
             string connectionString = "Data Source=TickIT.db;Version=3;";
             try
             {
                 using (SQLiteConnection conn = new SQLiteConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "SELECT StatusName FROM Statuses";
 
-                    using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
-                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    int inProgressStatusId;
+                    using (SQLiteCommand statusCmd = new SQLiteCommand("SELECT StatusID FROM Statuses WHERE StatusName = 'In progress'", conn))
                     {
-                        comboBoxStatus.Items.Clear();
-                        while (reader.Read())
+                        object result = statusCmd.ExecuteScalar();
+                        inProgressStatusId = Convert.ToInt32(result);
+                    }
+
+                    string updateQuery = @"
+                UPDATE Tickets 
+                SET TechnicianID = @TechnicianID,
+                    StatusID = @StatusID
+                WHERE TicketID = @TicketID";
+
+                    using (SQLiteCommand cmd = new SQLiteCommand(updateQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@TechnicianID", technicianId);
+                        cmd.Parameters.AddWithValue("@StatusID", inProgressStatusId);
+                        cmd.Parameters.AddWithValue("@TicketID", ticketId);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
                         {
-                            comboBoxStatus.Items.Add(reader["StatusName"].ToString());
+                            MessageBox.Show("Zgłoszenie zostało przypisane'.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadAllTicketsForTechnician(); // Odśwież listę
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nie udało się przypisać zgłoszenia.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Błąd ładowania statusów: " + ex.Message);
+                MessageBox.Show("Błąd podczas przypisywania zgłoszenia: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void buttonChangeStatus_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Proszę wybrać zgłoszenie do zmiany statusu.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (comboBoxStatus.SelectedItem == null)
-            {
-                MessageBox.Show("Proszę wybrać nowy status.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            int ticketID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
-            string selectedStatus = comboBoxStatus.SelectedItem.ToString();
-
-            string connectionString = "Data Source=TickIT.db;Version=3;";
-            var adapter = new SQLiteDataAdapter();
-            var connection = new SQLiteConnection(connectionString);
-
-            try
-            {
-                connection.Open();
-
-                var checkCommand = new SQLiteCommand("SELECT TechnicianID FROM Tickets WHERE TicketID = @TicketID", connection);
-                checkCommand.Parameters.AddWithValue("@TicketID", ticketID);
-                object technicianIdObj = checkCommand.ExecuteScalar();
-
-                if (technicianIdObj == null || technicianIdObj == DBNull.Value)
-                {
-                    MessageBox.Show("Zgłoszenie nie ma przypisanego technika.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                int assignedTechnicianId = Convert.ToInt32(technicianIdObj);
-                if (assignedTechnicianId != loggedUserID)
-                {
-                    MessageBox.Show("Nie jesteś przypisanym technikiem do tego zgłoszenia.", "Brak dostępu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                var statusIdCmd = new SQLiteCommand("SELECT StatusID FROM Statuses WHERE StatusName = @StatusName", connection);
-                statusIdCmd.Parameters.AddWithValue("@StatusName", selectedStatus);
-                object statusIdObj = statusIdCmd.ExecuteScalar();
-
-                if (statusIdObj == null)
-                {
-                    MessageBox.Show("Nieprawidłowy status.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                int statusID = Convert.ToInt32(statusIdObj);
-
-                string updateQuery = selectedStatus == "Resolved"
-                    ? "UPDATE Tickets SET StatusID = @StatusID, ResolvedDate = @ResolvedDate WHERE TicketID = @TicketID"
-                    : "UPDATE Tickets SET StatusID = @StatusID WHERE TicketID = @TicketID";
-
-                var updateCommand = new SQLiteCommand(updateQuery, connection);
-                updateCommand.Parameters.AddWithValue("@StatusID", statusID);
-                updateCommand.Parameters.AddWithValue("@TicketID", ticketID);
-
-                if (selectedStatus == "Resolved")
-                {
-                    updateCommand.Parameters.AddWithValue("@ResolvedDate", DateTime.Now);
-                }
-
-                adapter.UpdateCommand = updateCommand;
-                int rowsAffected = adapter.UpdateCommand.ExecuteNonQuery();
-
-                if (rowsAffected > 0)
-                {
-                    MessageBox.Show("Status został zmieniony.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Nie udało się zmienić statusu.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Błąd: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-
-        }
-
-        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -490,5 +380,76 @@ namespace TickIT
                 MessageBox.Show("Błąd podczas usuwania komentarza: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        public void AddComment(int ticketId, int userId, string commentText)
+        {
+            if (string.IsNullOrWhiteSpace(commentText))
+            {
+                MessageBox.Show("Komentarz nie może być pusty.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string connectionString = "Data Source=TickIT.db;Version=3;";
+
+            try
+            {
+                using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+                {
+                    conn.Open();
+
+                    DataSet dataSet = new DataSet();
+
+
+                    string selectQuery = "SELECT * FROM Comments WHERE 1=0"; // Trik: 0 wierszy
+                    using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(selectQuery, conn))
+                    {
+                        adapter.Fill(dataSet, "Comments");
+
+                        DataRow newRow = dataSet.Tables["Comments"].NewRow();
+                        newRow["TicketID"] = ticketId;
+                        newRow["UserID"] = userId;
+                        newRow["CommentText"] = commentText;
+                        newRow["CreatedDate"] = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+                        dataSet.Tables["Comments"].Rows.Add(newRow);
+
+                        // Tworzymy CommandBuilder do wygenerowania INSERT automatycznie
+                        SQLiteCommandBuilder commandBuilder = new SQLiteCommandBuilder(adapter);
+
+                        // Zapisujemy zmiany do bazy
+                        adapter.Update(dataSet, "Comments");
+
+                        MessageBox.Show("Komentarz został dodany.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
+                // Odświeżenie widoku komentarzy
+                LoadComments(ticketId);
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show("Błąd bazy danych: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            if (dataGridView1.CurrentRow != null)
+            {
+                int ticketId = Convert.ToInt32(dataGridView1.CurrentRow.Cells["TicketID"].Value);
+                AddComment(ticketId, loggedUserID, textBox1.Text.Trim());
+                textBox1.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Proszę najpierw wybrać zgłoszenie.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            }
+        }
     }
-}
+

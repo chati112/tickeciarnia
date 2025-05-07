@@ -3,40 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|c:\\users\\jakub\\onedrive\\pulpit\\nowy folder (5)\\tickeciarnia\\tickit\\forms\\newticketform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\newticketform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\recoverpasswordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\recoverpasswordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\changepasswordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\changepasswordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\newticketform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\newticketform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\technicianview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|c:\\users\\jakub\\onedrive\\pulpit\\nowy folder (5)\\tickeciarnia\\tickit\\forms\\technicianview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\technicianview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\technicianview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\technicianview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\userview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\userview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\userview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\userview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\technicianview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\technicianview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\technicianview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\technicianview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\userview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\userview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\userview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\userview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\newticketform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\newticketform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\changepasswordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\changepasswordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\reopenform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\reopenform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\newticketform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\newticketform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\recoverpasswordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\recoverpasswordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Forms\\EmailService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -50,16 +66,8 @@
       "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\helpers\\passwordhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\reopenform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\reopenform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -70,20 +78,12 @@
       "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\reopenform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\userview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\userview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\changepasswordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\changepasswordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\tickit\\forms\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{877647E9-F309-414B-96DA-E1A5C72C80A7}|TickIT\\TickIT.csproj|solutionrelative:tickit\\forms\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|TickIT||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
@@ -100,44 +100,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 26,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "UserView.cs [Projekt]",
               "DocumentMoniker": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\UserView.cs",
               "RelativeDocumentMoniker": "TickIT\\Forms\\UserView.cs",
-              "ToolTip": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\tickeciarnia 07.05.2025\\tickeciarnia-main\\TickIT\\Forms\\UserView.cs [Projekt]",
-              "RelativeToolTip": "..\\..\\tickeciarnia 07.05.2025\\tickeciarnia-main\\TickIT\\Forms\\UserView.cs [Projekt]",
+              "ToolTip": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\UserView.cs [Projekt]",
+              "RelativeToolTip": "TickIT\\Forms\\UserView.cs [Projekt]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-22T19:15:53.621Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": " [Projekt]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "TechnicianView.cs [Projekt]",
               "DocumentMoniker": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\TechnicianView.cs",
               "RelativeDocumentMoniker": "TickIT\\Forms\\TechnicianView.cs",
-              "ToolTip": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\tickeciarnia 07.05.2025\\tickeciarnia-main\\TickIT\\Forms\\TechnicianView.cs [Projekt]",
-              "RelativeToolTip": "..\\..\\tickeciarnia 07.05.2025\\tickeciarnia-main\\TickIT\\Forms\\TechnicianView.cs [Projekt]",
+              "ToolTip": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\TechnicianView.cs [Projekt]",
+              "RelativeToolTip": "TickIT\\Forms\\TechnicianView.cs [Projekt]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-22T19:16:11.918Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": " [Projekt]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "TechnicianView.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\TechnicianView.cs",
               "RelativeDocumentMoniker": "TickIT\\Forms\\TechnicianView.cs",
               "ToolTip": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\TechnicianView.cs",
               "RelativeToolTip": "TickIT\\Forms\\TechnicianView.cs",
-              "ViewState": "AQIAALwBAAAAAAAAAAAAALEBAAAJAAAA",
+              "ViewState": "AQIAAH8BAAAAAAAAAADgv10BAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-02T12:06:02.724Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -165,65 +168,70 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "UserView.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\UserView.cs",
               "RelativeDocumentMoniker": "TickIT\\Forms\\UserView.cs",
               "ToolTip": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\UserView.cs",
               "RelativeToolTip": "TickIT\\Forms\\UserView.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAADgvx0AAAAMAAAA",
+              "ViewState": "AQIAAN0AAAAAAAAAAAAAAMYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T18:03:40.341Z"
+              "WhenOpened": "2025-04-14T18:03:40.341Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "TechnicianView.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\TechnicianView.Designer.cs",
               "RelativeDocumentMoniker": "TickIT\\Forms\\TechnicianView.Designer.cs",
               "ToolTip": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\TechnicianView.Designer.cs",
               "RelativeToolTip": "TickIT\\Forms\\TechnicianView.Designer.cs",
-              "ViewState": "AQIAACABAAAAAAAAAADgvywBAABJAAAA",
+              "ViewState": "AQIAAJYAAAAAAAAAAADgv6gAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T09:33:20.851Z"
+              "WhenOpened": "2025-05-07T09:33:20.851Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 10,
               "Title": "ReopenForm.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\ReopenForm.cs",
               "RelativeDocumentMoniker": "TickIT\\Forms\\ReopenForm.cs",
               "ToolTip": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\ReopenForm.cs",
               "RelativeToolTip": "TickIT\\Forms\\ReopenForm.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAACAAAAAJAAAA",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAACAAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T10:59:28.551Z"
+              "WhenOpened": "2025-05-03T10:59:28.551Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 9,
               "Title": "AdminView.cs [Projekt]",
               "DocumentMoniker": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\AdminView.cs",
               "RelativeDocumentMoniker": "TickIT\\Forms\\AdminView.cs",
-              "ToolTip": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\tickeciarnia 14.04\\tickeciarnia\\TickIT\\Forms\\AdminView.cs [Projekt]",
-              "RelativeToolTip": "..\\..\\tickeciarnia 14.04\\tickeciarnia\\TickIT\\Forms\\AdminView.cs [Projekt]",
+              "ToolTip": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\AdminView.cs [Projekt]",
+              "RelativeToolTip": "TickIT\\Forms\\AdminView.cs [Projekt]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T14:27:54.028Z"
+              "WhenOpened": "2025-03-22T14:27:54.028Z",
+              "EditorCaption": " [Projekt]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "ChangePasswordForm.cs [Projekt]",
               "DocumentMoniker": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\ChangePasswordForm.cs",
               "RelativeDocumentMoniker": "TickIT\\Forms\\ChangePasswordForm.cs",
-              "ToolTip": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\tickeciarnia 07.05.2025\\tickeciarnia-main\\TickIT\\Forms\\ChangePasswordForm.cs [Projekt]",
-              "RelativeToolTip": "..\\..\\tickeciarnia 07.05.2025\\tickeciarnia-main\\TickIT\\Forms\\ChangePasswordForm.cs [Projekt]",
+              "ToolTip": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\ChangePasswordForm.cs [Projekt]",
+              "RelativeToolTip": "TickIT\\Forms\\ChangePasswordForm.cs [Projekt]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T18:41:00.779Z"
+              "WhenOpened": "2025-04-25T18:41:00.779Z",
+              "EditorCaption": " [Projekt]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "LoginForm.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\LoginForm.cs",
               "RelativeDocumentMoniker": "TickIT\\Forms\\LoginForm.cs",
@@ -235,7 +243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "AdminView.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\AdminView.cs",
               "RelativeDocumentMoniker": "TickIT\\Forms\\AdminView.cs",
@@ -243,34 +251,37 @@
               "RelativeToolTip": "TickIT\\Forms\\AdminView.cs",
               "ViewState": "AQIAAPcAAAAAAAAAAAAAAL4AAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T15:30:14.403Z"
+              "WhenOpened": "2025-03-22T15:30:14.403Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 5,
               "Title": "UserView.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\UserView.Designer.cs",
               "RelativeDocumentMoniker": "TickIT\\Forms\\UserView.Designer.cs",
               "ToolTip": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\UserView.Designer.cs",
               "RelativeToolTip": "TickIT\\Forms\\UserView.Designer.cs",
-              "ViewState": "AQIAAJoAAAAAAAAAAAAWwKsAAABCAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T10:45:48.057Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ReopenForm.cs [Projekt]",
-              "DocumentMoniker": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\ReopenForm.cs",
-              "RelativeDocumentMoniker": "TickIT\\Forms\\ReopenForm.cs",
-              "ToolTip": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\tickeciarnia 07.05.2025\\tickeciarnia-main\\TickIT\\Forms\\ReopenForm.cs [Projekt]",
-              "RelativeToolTip": "..\\..\\tickeciarnia 07.05.2025\\tickeciarnia-main\\TickIT\\Forms\\ReopenForm.cs [Projekt]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T11:28:22.34Z"
+              "WhenOpened": "2025-04-26T10:45:48.057Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
+              "Title": "ReopenForm.cs [Projekt]",
+              "DocumentMoniker": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\ReopenForm.cs",
+              "RelativeDocumentMoniker": "TickIT\\Forms\\ReopenForm.cs",
+              "ToolTip": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\ReopenForm.cs [Projekt]",
+              "RelativeToolTip": "TickIT\\Forms\\ReopenForm.cs [Projekt]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T11:28:22.34Z",
+              "EditorCaption": " [Projekt]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "ChangePasswordForm.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\ChangePasswordForm.cs",
               "RelativeDocumentMoniker": "TickIT\\Forms\\ChangePasswordForm.cs",
@@ -278,7 +289,8 @@
               "RelativeToolTip": "TickIT\\Forms\\ChangePasswordForm.cs",
               "ViewState": "AQIAACoAAAAAAAAAAAAAAEEAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T18:42:50.182Z"
+              "WhenOpened": "2025-04-25T18:42:50.182Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -293,20 +305,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "NewTicketForm.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\NewTicketForm.cs",
               "RelativeDocumentMoniker": "TickIT\\Forms\\NewTicketForm.cs",
               "ToolTip": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\NewTicketForm.cs",
               "RelativeToolTip": "TickIT\\Forms\\NewTicketForm.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAADgvxgAAAAAAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAADgvxgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-14T18:02:23.865Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 7,
               "Title": "LoginForm.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\LoginForm.Designer.cs",
               "RelativeDocumentMoniker": "TickIT\\Forms\\LoginForm.Designer.cs",
@@ -314,11 +326,12 @@
               "RelativeToolTip": "TickIT\\Forms\\LoginForm.Designer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T17:49:25.521Z"
+              "WhenOpened": "2025-04-14T17:49:25.521Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "PasswordHelper.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Helpers\\PasswordHelper.cs",
               "RelativeDocumentMoniker": "TickIT\\Helpers\\PasswordHelper.cs",
@@ -330,7 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "TickIT\\Services\\UserService.cs",
@@ -354,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 12,
               "Title": "RecoverPasswordForm.cs [Projekt]",
               "DocumentMoniker": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\RecoverPasswordForm.cs",
               "RelativeDocumentMoniker": "TickIT\\Forms\\RecoverPasswordForm.cs",
@@ -365,7 +378,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 11,
               "Title": "NewTicketForm.cs [Projekt]",
               "DocumentMoniker": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Forms\\NewTicketForm.cs",
               "RelativeDocumentMoniker": "TickIT\\Forms\\NewTicketForm.cs",
@@ -377,7 +390,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "EmailService.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\OneDrive\\Pulpit\\Nowy folder (5)\\tickeciarnia\\TickIT\\Services\\EmailService.cs",
               "RelativeDocumentMoniker": "TickIT\\Services\\EmailService.cs",
@@ -389,13 +402,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "EmailService.cs",
               "DocumentMoniker": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Forms\\EmailService.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\source\\repos\\TickIT\\TickIT\\Forms\\EmailService.cs",
               "ToolTip": "C:\\Users\\Jakub\\source\\repos\\TickIT\\TickIT\\Forms\\EmailService.cs",
               "RelativeToolTip": "..\\..\\..\\..\\source\\repos\\TickIT\\TickIT\\Forms\\EmailService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-02T18:05:02.424Z"
             }

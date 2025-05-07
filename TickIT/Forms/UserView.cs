@@ -196,7 +196,7 @@ namespace TickIT
             newTicketForm.ShowDialog();
         }
 
-        private void AddComment(int ticketId, int userId, string commentText)
+        public void AddComment(int ticketId, int userId, string commentText)
         {
             if (string.IsNullOrWhiteSpace(commentText))
             {
@@ -212,16 +212,14 @@ namespace TickIT
                 {
                     conn.Open();
 
-                    // Tworzymy DataSet
                     DataSet dataSet = new DataSet();
 
-                    // Ładujemy strukturę tabeli Comments do DataSetu (ale bez danych)
+
                     string selectQuery = "SELECT * FROM Comments WHERE 1=0"; // Trik: 0 wierszy
                     using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(selectQuery, conn))
                     {
                         adapter.Fill(dataSet, "Comments");
 
-                        // Dodajemy nowy wiersz
                         DataRow newRow = dataSet.Tables["Comments"].NewRow();
                         newRow["TicketID"] = ticketId;
                         newRow["UserID"] = userId;

@@ -40,8 +40,6 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.buttonAssign = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.buttonChangeStatus = new System.Windows.Forms.Button();
-            this.comboBoxStatus = new System.Windows.Forms.ComboBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorComments = new System.Windows.Forms.BindingNavigator(this.components);
@@ -101,25 +99,26 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(359, 326);
+            this.textBox1.Location = new System.Drawing.Point(314, 329);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(288, 112);
+            this.textBox1.Size = new System.Drawing.Size(425, 132);
             this.textBox1.TabIndex = 4;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(359, 444);
+            this.button1.Location = new System.Drawing.Point(314, 468);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(288, 23);
+            this.button1.Size = new System.Drawing.Size(425, 37);
             this.button1.TabIndex = 5;
-            this.button1.Text = "Add";
+            this.button1.Text = "Add ";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(356, 310);
+            this.label3.Location = new System.Drawing.Point(311, 313);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 13);
             this.label3.TabIndex = 6;
@@ -150,7 +149,7 @@
             // 
             // buttonAssign
             // 
-            this.buttonAssign.Location = new System.Drawing.Point(15, 310);
+            this.buttonAssign.Location = new System.Drawing.Point(38, 369);
             this.buttonAssign.Name = "buttonAssign";
             this.buttonAssign.Size = new System.Drawing.Size(218, 35);
             this.buttonAssign.TabIndex = 9;
@@ -160,41 +159,12 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(15, 432);
+            this.button3.Location = new System.Drawing.Point(38, 423);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(218, 35);
             this.button3.TabIndex = 10;
             this.button3.Text = "Resolve";
             this.button3.UseVisualStyleBackColor = true;
-            // 
-            // buttonChangeStatus
-            // 
-            this.buttonChangeStatus.Location = new System.Drawing.Point(15, 364);
-            this.buttonChangeStatus.Name = "buttonChangeStatus";
-            this.buttonChangeStatus.Size = new System.Drawing.Size(218, 23);
-            this.buttonChangeStatus.TabIndex = 11;
-            this.buttonChangeStatus.Text = "Change status";
-            this.buttonChangeStatus.UseVisualStyleBackColor = true;
-            this.buttonChangeStatus.Click += new System.EventHandler(this.buttonChangeStatus_Click);
-            // 
-            // comboBoxStatus
-            // 
-            this.comboBoxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxStatus.FormattingEnabled = true;
-            this.comboBoxStatus.Items.AddRange(new object[] {
-            "New, Open",
-            "In progress",
-            "Pending, Client action required",
-            "Pending, Monitoring incident",
-            "Resolved, Closed"});
-            this.comboBoxStatus.Location = new System.Drawing.Point(15, 393);
-            this.comboBoxStatus.Name = "comboBoxStatus";
-            this.comboBoxStatus.Size = new System.Drawing.Size(218, 21);
-            this.comboBoxStatus.TabIndex = 12;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.CurrentChanged += new System.EventHandler(this.bindingSource1_CurrentChanged);
             // 
             // bindingNavigatorComments
             // 
@@ -320,8 +290,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1362, 522);
             this.Controls.Add(this.bindingNavigatorComments);
-            this.Controls.Add(this.comboBoxStatus);
-            this.Controls.Add(this.buttonChangeStatus);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.buttonAssign);
             this.Controls.Add(this.dataGridView3);
@@ -359,8 +327,6 @@
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Button buttonAssign;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button buttonChangeStatus;
-        private System.Windows.Forms.ComboBox comboBoxStatus;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.BindingSource bindingSource2;
         private System.Windows.Forms.BindingNavigator bindingNavigatorComments;
