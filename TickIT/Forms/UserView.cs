@@ -186,14 +186,19 @@ namespace TickIT
 
         private void button2_Click(object sender, EventArgs e)
         {
-            NewTicketForm newTicketForm = new NewTicketForm();
+            NewTicketForm newTicketForm = new NewTicketForm(currentUserId);
             newTicketForm.ShowDialog();
         }
 
         private void bindingNavigatorAddNewItem1_Click(object sender, EventArgs e)
         {
-            NewTicketForm newTicketForm = new NewTicketForm();
-            newTicketForm.ShowDialog();
+            using (NewTicketForm form = new NewTicketForm(currentUserId))
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    LoadUserTickets(currentUserId);
+                }
+            }
         }
 
         public void AddComment(int ticketId, int userId, string commentText)

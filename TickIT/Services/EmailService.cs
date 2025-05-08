@@ -41,5 +41,40 @@ namespace TickIT.Services
                 }
             }
         }
+
+        public static void SendTicketResolvedEmail(string recipientEmail, string userName, string ticketTitle)
+        {
+            string smtpHost = "smtp.gmail.com";
+            int smtpPort = 587;
+            string smtpUsername = "Przychodnia2137@gmail.com";
+            string smtpPassword = "lsjp ajxr rmqf iovh";
+
+            using (SmtpClient client = new SmtpClient(smtpHost, smtpPort))
+            {
+                client.EnableSsl = true;
+                client.Credentials = new NetworkCredential(smtpUsername, smtpPassword);
+
+                using (MailMessage message = new MailMessage(smtpUsername, recipientEmail))
+                {
+                    message.Subject = "Zgłoszenie zostało rozwiązane - TickIT";
+                    message.Body = $"Dzień dobry {userName},\n\n" +
+                                   $"Twoje zgłoszenie o tytule: \"{ticketTitle}\" zostało oznaczone jako rozwiązane.\n" +
+                                   
+                                   $"Dziękujemy za skorzystanie z naszego systemu wsparcia.\n\nZespół TickIT.";
+
+                    try
+                    {
+                        client.Send(message);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Błąd podczas wysyłania maila: {ex.Message}");
+                    }
+                }
+            }
+        }
+
+
+
     }
 }

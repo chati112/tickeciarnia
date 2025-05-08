@@ -11,6 +11,7 @@ using System.Data.OleDb;
 using System.Data.SQLite;
 using System.Windows.Forms.VisualStyles;
 using System.Security.Cryptography.X509Certificates;
+using TickIT.Services;
 
 
 namespace TickIT
@@ -30,11 +31,11 @@ namespace TickIT
         private void TechnicianView_Load(object sender, EventArgs e)
         {
             bindingNavigatorComments.BindingSource = commentsBindingSource;
-            commentsBindingSource.PositionChanged +=  CommentsBindingSource_PositionChanged;
+            commentsBindingSource.PositionChanged += CommentsBindingSource_PositionChanged;
             LoadAllTicketsForTechnician();
             dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView3.CellClick += dataGridView3_CellClick;
-
+            bindingNavigatorComments.AddNewItem = null;
         }
 
         private void LoadComments(int ticketId)
@@ -70,7 +71,7 @@ namespace TickIT
                     }
                 }
 
-
+                
                 commentsBindingSource.DataSource = dtJournal;
                 dataGridView3.DataSource = commentsBindingSource;
                 bindingNavigatorComments.BindingSource = commentsBindingSource;
@@ -80,7 +81,8 @@ namespace TickIT
 
                 if (dataGridView3.Columns.Contains("Comment"))
                     dataGridView3.Columns["Comment"].Width = 330;
-
+                if (dataGridView3.Columns.Contains("ID"))
+                    dataGridView3.Columns["ID"].Width = 35;
                 if (dataGridView3.Columns["CommentID"] != null)
                 {
                     dataGridView3.Columns["CommentID"].Visible = false;
@@ -413,17 +415,14 @@ namespace TickIT
 
                         dataSet.Tables["Comments"].Rows.Add(newRow);
 
-                        // Tworzymy CommandBuilder do wygenerowania INSERT automatycznie
+
                         SQLiteCommandBuilder commandBuilder = new SQLiteCommandBuilder(adapter);
 
-                        // Zapisujemy zmiany do bazy
                         adapter.Update(dataSet, "Comments");
 
                         MessageBox.Show("Komentarz został dodany.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-
-                // Odświeżenie widoku komentarzy
                 LoadComments(ticketId);
             }
             catch (SQLiteException ex)
@@ -449,7 +448,100 @@ namespace TickIT
             {
                 MessageBox.Show("Proszę najpierw wybrać zgłoszenie.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null)
+            {
+                MessageBox.Show("Nie wybrano żadnego zgłoszenia.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+
+            int ticketId = Convert.ToInt32(dataGridView1.CurrentRow.Cells["TicketID"].Value);
+            string ticketTitle = dataGridView1.CurrentRow.Cells["Title"].Value.ToString();
+            string connectionString = "Data Source=TickIT.db;Version=3;";
+            string recipientEmail = "";
+            string userName = "";
+
+            try
+            {
+                using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+                {
+                    conn.Open();
+
+                    // Sprawdzenie, czy zgłoszenie ma przypisanego technika i czy jest przypisane do aktualnego
+                    string checkAssignmentQuery = "SELECT TechnicianID FROM Tickets WHERE TicketID = @TicketID";
+                    using (SQLiteCommand checkCmd = new SQLiteCommand(checkAssignmentQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@TicketID", ticketId);
+                        object assignedTechId = checkCmd.ExecuteScalar();
+
+                        if (assignedTechId == DBNull.Value)
+                        {
+                            MessageBox.Show("Zgłoszenie nie ma przypisanego technika i nie może zostać rozwiązane.", "Odmowa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        int technicianId = Convert.ToInt32(assignedTechId);
+                        if (technicianId != loggedUserID)
+                        {
+                            MessageBox.Show("Zgłoszenie nie jest przypisane do Ciebie i nie może zostać rozwiązane.", "Odmowa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+
+                    // Pobierz ID statusu "Resolved"
+                    string getStatusIdQuery = "SELECT StatusID FROM Statuses WHERE StatusName = 'Resolved'";
+                    int resolvedStatusId = Convert.ToInt32(new SQLiteCommand(getStatusIdQuery, conn).ExecuteScalar());
+
+                    // Pobierz dane użytkownika
+                    string userQuery = @"
+            SELECT U.Email, U.FirstName || ' ' || U.LastName AS FullName
+            FROM Tickets T
+            INNER JOIN Users U ON T.UserID = U.UserID
+            WHERE T.TicketID = @TicketID";
+
+                    using (SQLiteCommand cmd = new SQLiteCommand(userQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@TicketID", ticketId);
+                        using (SQLiteDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                recipientEmail = reader["Email"].ToString();
+                                userName = reader["FullName"].ToString();
+                            }
+                        }
+                    }
+
+                    // Aktualizacja statusu i daty rozwiązania
+                    string updateQuery = @"
+            UPDATE Tickets 
+            SET StatusID = @StatusID, ResolvedDate = @ResolvedDate 
+            WHERE TicketID = @TicketID";
+
+                    using (SQLiteCommand updateCmd = new SQLiteCommand(updateQuery, conn))
+                    {
+                        updateCmd.Parameters.AddWithValue("@StatusID", resolvedStatusId);
+                        updateCmd.Parameters.AddWithValue("@ResolvedDate", DateTime.Now);
+                        updateCmd.Parameters.AddWithValue("@TicketID", ticketId);
+                        updateCmd.ExecuteNonQuery();
+                    }
+                }
+
+                // Wysyłka e-maila
+                EmailService.SendTicketResolvedEmail(recipientEmail, userName, ticketTitle);
+
+                MessageBox.Show("Zgłoszenie zostało oznaczone jako rozwiązane. Wysłano e-mail do użytkownika.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadAllTicketsForTechnician();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Wystąpił błąd: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
+}
 

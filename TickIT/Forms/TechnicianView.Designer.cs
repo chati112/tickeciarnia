@@ -149,7 +149,7 @@
             // 
             // buttonAssign
             // 
-            this.buttonAssign.Location = new System.Drawing.Point(38, 369);
+            this.buttonAssign.Location = new System.Drawing.Point(38, 329);
             this.buttonAssign.Name = "buttonAssign";
             this.buttonAssign.Size = new System.Drawing.Size(218, 35);
             this.buttonAssign.TabIndex = 9;
@@ -159,12 +159,13 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(38, 423);
+            this.button3.Location = new System.Drawing.Point(38, 426);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(218, 35);
             this.button3.TabIndex = 10;
             this.button3.Text = "Resolve";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // bindingNavigatorComments
             // 
@@ -330,7 +331,6 @@
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.BindingSource bindingSource2;
         private System.Windows.Forms.BindingNavigator bindingNavigatorComments;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
@@ -341,5 +341,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
     }
 }
