@@ -83,7 +83,7 @@ namespace TickIT.Forms.user
 
             string reason = comboBoxReason.Text.Trim();
             string description = textBoxDescription.Text.Trim();
-            string commentText = $"REOPEN: {reason}\n DESCRIPTION: {description}";
+            string commentText = $"REOPEN: {reason}\nDESCRIPTION: {description}";
 
             string connectionString = "Data Source=TickIT.db;Version=3;";
 
@@ -93,20 +93,22 @@ namespace TickIT.Forms.user
                 {
                     conn.Open();
 
-                    // Sprawdzenie, czy ticket należy do current usera
-                    string checkTicketQuery = "SELECT * FROM Tickets WHERE TicketID = @TicketID AND UserID = @UserID";
+                    string checkTicketQuery = @"
+                        SELECT T.TicketID 
+                        FROM Tickets T
+                        INNER JOIN Statuses S ON T.StatusID = S.StatusID
+                        WHERE T.TicketID = @TicketID AND T.UserID = @UserID AND S.StatusName = 'Resolved'";
 
-                    using (SQLiteDataAdapter checkAdapter = new SQLiteDataAdapter(checkTicketQuery, conn))
+                    using (SQLiteCommand checkCmd = new SQLiteCommand(checkTicketQuery, conn))
                     {
-                        checkAdapter.SelectCommand.Parameters.AddWithValue("@TicketID", ticketId);
-                        checkAdapter.SelectCommand.Parameters.AddWithValue("@UserID", currentUserId);
+                        checkCmd.Parameters.AddWithValue("@TicketID", ticketId);
+                        checkCmd.Parameters.AddWithValue("@UserID", currentUserId);
 
-                        DataSet ds = new DataSet();
-                        checkAdapter.Fill(ds, "Ticket");
+                        object result = checkCmd.ExecuteScalar();
 
-                        if (ds.Tables["Ticket"].Rows.Count == 0)
+                        if (result == null)
                         {
-                            MessageBox.Show("Nie znaleziono takiego ticketa przypisanego do Ciebie.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Nie można ponownie otworzyć tego ticketa. Upewnij się, że podałeś poprawne ID i ma zgłoszenie status 'Resolved'.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
                     }
@@ -124,7 +126,6 @@ namespace TickIT.Forms.user
                             statusId = Convert.ToInt32(result);
                         }
 
-                        // Aktualizacja statusu
                         string updateQuery = "UPDATE Tickets SET StatusID = @StatusID WHERE TicketID = @TicketID";
 
                         using (SQLiteCommand updateCmd = new SQLiteCommand(updateQuery, conn))
@@ -134,7 +135,6 @@ namespace TickIT.Forms.user
                             updateCmd.ExecuteNonQuery();
                         }
 
-                        // Dodanie komentarza
                         string insertCommentQuery = @"
                     INSERT INTO Comments (TicketID, UserID, CommentText, CreatedDate)
                     VALUES (@TicketID, @UserID, @CommentText, CURRENT_TIMESTAMP)";

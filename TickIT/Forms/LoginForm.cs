@@ -125,20 +125,11 @@ namespace TickIT
             userForm.Show();
         }   
 
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_resetpwd_Click(object sender, EventArgs e)
         {
             RecoverPasswordForm recoverPasswordForm = new RecoverPasswordForm();
             recoverPasswordForm.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-  
-        }
     }
 }

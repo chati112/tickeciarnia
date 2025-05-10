@@ -45,7 +45,6 @@
             this.bindingNavigatorComments = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -54,6 +53,10 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.btn_DeleteComment = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -61,6 +64,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorComments)).BeginInit();
             this.bindingNavigatorComments.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -82,7 +87,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(765, 286);
+            this.dataGridView1.Size = new System.Drawing.Size(765, 287);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -149,7 +154,7 @@
             // 
             // buttonAssign
             // 
-            this.buttonAssign.Location = new System.Drawing.Point(38, 329);
+            this.buttonAssign.Location = new System.Drawing.Point(38, 321);
             this.buttonAssign.Name = "buttonAssign";
             this.buttonAssign.Size = new System.Drawing.Size(218, 35);
             this.buttonAssign.TabIndex = 9;
@@ -159,7 +164,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(38, 426);
+            this.button3.Location = new System.Drawing.Point(38, 369);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(218, 35);
             this.button3.TabIndex = 10;
@@ -172,7 +177,7 @@
             this.bindingNavigatorComments.AddNewItem = this.bindingNavigatorAddNewItem;
             this.bindingNavigatorComments.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bindingNavigatorComments.CountItem = this.bindingNavigatorCountItem;
-            this.bindingNavigatorComments.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bindingNavigatorComments.DeleteItem = null;
             this.bindingNavigatorComments.Dock = System.Windows.Forms.DockStyle.None;
             this.bindingNavigatorComments.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -184,8 +189,7 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem});
+            this.bindingNavigatorAddNewItem});
             this.bindingNavigatorComments.Location = new System.Drawing.Point(798, 464);
             this.bindingNavigatorComments.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigatorComments.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -193,7 +197,7 @@
             this.bindingNavigatorComments.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigatorComments.Name = "bindingNavigatorComments";
             this.bindingNavigatorComments.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigatorComments.Size = new System.Drawing.Size(249, 25);
+            this.bindingNavigatorComments.Size = new System.Drawing.Size(257, 25);
             this.bindingNavigatorComments.TabIndex = 13;
             this.bindingNavigatorComments.Text = "bindingNavigator1";
             // 
@@ -213,16 +217,6 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(29, 22);
             this.bindingNavigatorCountItem.Text = "z {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Suma elementów";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Usuń";
-            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -285,11 +279,65 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(21, 51);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(57, 20);
+            this.numericUpDown1.TabIndex = 14;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // btn_DeleteComment
+            // 
+            this.btn_DeleteComment.Location = new System.Drawing.Point(106, 21);
+            this.btn_DeleteComment.Name = "btn_DeleteComment";
+            this.btn_DeleteComment.Size = new System.Drawing.Size(95, 50);
+            this.btn_DeleteComment.TabIndex = 15;
+            this.btn_DeleteComment.Text = "Delete";
+            this.btn_DeleteComment.UseVisualStyleBackColor = true;
+            this.btn_DeleteComment.Click += new System.EventHandler(this.btn_DeleteComment_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.btn_DeleteComment);
+            this.groupBox1.Location = new System.Drawing.Point(38, 421);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(218, 89);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Comment deletion";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Comment ID:";
+            // 
             // TechnicianView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1362, 522);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bindingNavigatorComments);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.buttonAssign);
@@ -312,6 +360,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorComments)).EndInit();
             this.bindingNavigatorComments.ResumeLayout(false);
             this.bindingNavigatorComments.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -332,7 +383,6 @@
         private System.Windows.Forms.BindingSource bindingSource2;
         private System.Windows.Forms.BindingNavigator bindingNavigatorComments;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -342,5 +392,9 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Button btn_DeleteComment;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

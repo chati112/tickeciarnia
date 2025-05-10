@@ -41,28 +41,28 @@
             // 
             // textBox_CurrentPassword
             // 
-            this.textBox_CurrentPassword.Location = new System.Drawing.Point(269, 115);
+            this.textBox_CurrentPassword.Location = new System.Drawing.Point(32, 82);
             this.textBox_CurrentPassword.Name = "textBox_CurrentPassword";
             this.textBox_CurrentPassword.Size = new System.Drawing.Size(126, 20);
             this.textBox_CurrentPassword.TabIndex = 0;
             // 
             // textBox_NewPassword
             // 
-            this.textBox_NewPassword.Location = new System.Drawing.Point(269, 170);
+            this.textBox_NewPassword.Location = new System.Drawing.Point(32, 137);
             this.textBox_NewPassword.Name = "textBox_NewPassword";
             this.textBox_NewPassword.Size = new System.Drawing.Size(129, 20);
             this.textBox_NewPassword.TabIndex = 1;
             // 
             // textBox_RepeatPassword
             // 
-            this.textBox_RepeatPassword.Location = new System.Drawing.Point(269, 222);
+            this.textBox_RepeatPassword.Location = new System.Drawing.Point(32, 189);
             this.textBox_RepeatPassword.Name = "textBox_RepeatPassword";
             this.textBox_RepeatPassword.Size = new System.Drawing.Size(129, 20);
             this.textBox_RepeatPassword.TabIndex = 2;
             // 
             // btn_Confirm
             // 
-            this.btn_Confirm.Location = new System.Drawing.Point(269, 266);
+            this.btn_Confirm.Location = new System.Drawing.Point(32, 233);
             this.btn_Confirm.Name = "btn_Confirm";
             this.btn_Confirm.Size = new System.Drawing.Size(129, 23);
             this.btn_Confirm.TabIndex = 3;
@@ -73,7 +73,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(269, 99);
+            this.label1.Location = new System.Drawing.Point(32, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 13);
             this.label1.TabIndex = 4;
@@ -82,7 +82,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(266, 154);
+            this.label2.Location = new System.Drawing.Point(29, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 13);
             this.label2.TabIndex = 5;
@@ -91,7 +91,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(269, 206);
+            this.label3.Location = new System.Drawing.Point(32, 173);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(116, 13);
             this.label3.TabIndex = 6;
@@ -101,7 +101,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(269, 60);
+            this.label4.Location = new System.Drawing.Point(32, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 13);
             this.label4.TabIndex = 7;
@@ -109,7 +109,7 @@
             // 
             // textBox_Email
             // 
-            this.textBox_Email.Location = new System.Drawing.Point(269, 76);
+            this.textBox_Email.Location = new System.Drawing.Point(32, 43);
             this.textBox_Email.Name = "textBox_Email";
             this.textBox_Email.Size = new System.Drawing.Size(126, 20);
             this.textBox_Email.TabIndex = 8;
@@ -118,7 +118,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(211, 301);
             this.Controls.Add(this.textBox_Email);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);

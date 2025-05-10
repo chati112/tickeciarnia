@@ -41,7 +41,6 @@
             this.comboBox_Priority = new System.Windows.Forms.ComboBox();
             this.btnChangePriority = new System.Windows.Forms.Button();
             this.btn_reopen = new System.Windows.Forms.Button();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorTickets = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
@@ -57,7 +56,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJournal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTickets)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorTickets)).BeginInit();
             this.bindingNavigatorTickets.SuspendLayout();
             this.SuspendLayout();
@@ -326,7 +324,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewJournal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTickets)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorTickets)).EndInit();
             this.bindingNavigatorTickets.ResumeLayout(false);
             this.bindingNavigatorTickets.PerformLayout();
@@ -348,7 +345,6 @@
         private System.Windows.Forms.ComboBox comboBox_Priority;
         private System.Windows.Forms.Button btnChangePriority;
         private System.Windows.Forms.Button btn_reopen;
-        private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.BindingNavigator bindingNavigatorTickets;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem1;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem1;

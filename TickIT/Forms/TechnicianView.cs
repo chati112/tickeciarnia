@@ -27,7 +27,6 @@ namespace TickIT
             loggedUserID = userID;
         }
 
-
         private void TechnicianView_Load(object sender, EventArgs e)
         {
             bindingNavigatorComments.BindingSource = commentsBindingSource;
@@ -37,7 +36,7 @@ namespace TickIT
             dataGridView3.CellClick += dataGridView3_CellClick;
             bindingNavigatorComments.AddNewItem = null;
         }
-
+        
         private void LoadComments(int ticketId)
         {
             string connectionString = "Data Source=TickIT.db;Version=3;";
@@ -50,15 +49,15 @@ namespace TickIT
                     conn.Open();
 
                     string query = @"
-                SELECT 
-                    C.CommentID AS ID,
-                    C.CommentText AS Comment,
-                    C.CreatedDate AS 'Date Added',
-                    U.FirstName || ' ' || U.LastName AS Author
-                FROM Comments C
-                INNER JOIN Users U ON C.UserID = U.UserID
-                WHERE C.TicketID = @TicketID
-                ORDER BY C.CreatedDate ASC";
+                    SELECT 
+                        C.CommentID AS ID,
+                        C.CommentText AS Comment,
+                        strftime('%Y-%m-%d %H:%M', C.CreatedDate) AS 'Date Added',
+                        U.FirstName || ' ' || U.LastName AS Author
+                    FROM Comments C
+                    INNER JOIN Users U ON C.UserID = U.UserID
+                    WHERE C.TicketID = @TicketID
+                    ORDER BY C.CreatedDate ASC";
 
                     using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                     {
@@ -71,7 +70,6 @@ namespace TickIT
                     }
                 }
 
-                
                 commentsBindingSource.DataSource = dtJournal;
                 dataGridView3.DataSource = commentsBindingSource;
                 bindingNavigatorComments.BindingSource = commentsBindingSource;
@@ -95,6 +93,7 @@ namespace TickIT
         }
 
 
+
         private void LoadTicketDetailsToGrid(int ticketId)
         {
             string connectionString = "Data Source=TickIT.db;Version=3;";
@@ -106,20 +105,21 @@ namespace TickIT
                     conn.Open();
 
                     string queryDetails = @"
-                SELECT 
-                    T.TicketID AS ID, 
-                    T.CreatedDate AS 'Reported date', 
-                    T.ResolvedDate AS 'Resolved date', 
-                    U1.FirstName || ' ' || U1.LastName AS Customer,
-                    U2.FirstName || ' ' || U2.LastName AS Asignee,
-                    S.StatusName AS Status,
-                    P.PriorityName AS Priority
-                FROM Tickets T
-                INNER JOIN Users U1 ON T.UserID = U1.UserID
-                LEFT JOIN Users U2 ON T.TechnicianID = U2.UserID
-                INNER JOIN Statuses S ON T.StatusID = S.StatusID
-                INNER JOIN Priorities P ON T.PriorityID = P.PriorityID
-                WHERE T.TicketID = @TicketID";
+                    SELECT 
+                        T.TicketID AS ID, 
+                        strftime('%Y-%m-%d %H:%M', T.CreatedDate) AS 'Reported date', 
+                        strftime('%Y-%m-%d %H:%M', T.ResolvedDate) AS 'Resolved date', 
+                        U1.FirstName || ' ' || U1.LastName AS Customer,
+                        U2.FirstName || ' ' || U2.LastName AS Asignee,
+                        S.StatusName AS Status,
+                        P.PriorityName AS Priority
+                    FROM Tickets T
+                    INNER JOIN Users U1 ON T.UserID = U1.UserID
+                    LEFT JOIN Users U2 ON T.TechnicianID = U2.UserID
+                    INNER JOIN Statuses S ON T.StatusID = S.StatusID
+                    INNER JOIN Priorities P ON T.PriorityID = P.PriorityID
+                    WHERE T.TicketID = @TicketID";
+
 
                     using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(queryDetails, conn))
                     {
@@ -165,19 +165,20 @@ namespace TickIT
                     conn.Open();
 
                     string query = @"
-                     SELECT 
-                            T.TicketID,
-                            T.Title,
-                            T.CreatedDate,
-                            P.PriorityName,
-                            S.StatusName,
-                            T.ResolvedDate
-                        FROM Tickets T
-                        INNER JOIN Priorities P ON T.PriorityID = P.PriorityID
-                        INNER JOIN Statuses S ON T.StatusID = S.StatusID
-                        ORDER BY 
-                            CASE WHEN S.StatusName = 'Resolved' THEN 1 ELSE 0 END,
-                            T.CreatedDate ASC";
+                    SELECT 
+                        T.TicketID,
+                        T.Title,
+                        strftime('%Y-%m-%d %H:%M', T.CreatedDate) AS CreatedDate,
+                        P.PriorityName,
+                        S.StatusName,
+                        strftime('%Y-%m-%d %H:%M', T.ResolvedDate) AS ResolvedDate
+                    FROM Tickets T
+                    INNER JOIN Priorities P ON T.PriorityID = P.PriorityID
+                    INNER JOIN Statuses S ON T.StatusID = S.StatusID
+                    ORDER BY 
+                        CASE WHEN S.StatusName = 'Resolved' THEN 1 ELSE 0 END,
+                        T.CreatedDate ASC";
+
 
 
                     using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, conn))
@@ -278,7 +279,7 @@ namespace TickIT
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Zgłoszenie zostało przypisane'.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            LoadAllTicketsForTechnician(); // Odśwież listę
+                            LoadAllTicketsForTechnician(); 
                         }
                         else
                         {
@@ -313,7 +314,6 @@ namespace TickIT
             }
         }
 
-
         private void CommentsBindingSource_PositionChanged(object sender, EventArgs e)
         {
             if (commentsBindingSource.Current is DataRowView currentRow)
@@ -327,62 +327,6 @@ namespace TickIT
             textBox1.Clear();
         }
 
-        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
-        {
-            if (commentsBindingSource.Current == null)
-            {
-                MessageBox.Show("Nie można usunąć jedynego komentarza w zgłoszeniu !", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            DataRowView currentRowView = commentsBindingSource.Current as DataRowView;
-            if (currentRowView == null || currentRowView["ID"] == DBNull.Value)
-            {
-                MessageBox.Show("Nie można odczytać ID komentarza.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            int commentId = Convert.ToInt32(currentRowView["ID"]);
-
-            DialogResult result = MessageBox.Show("Czy na pewno chcesz usunąć ten komentarz?", "Potwierdzenie", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result != DialogResult.Yes)
-                return;
-
-            string connectionString = "Data Source=TickIT.db;Version=3;";
-            try
-            {
-                using (SQLiteConnection conn = new SQLiteConnection(connectionString))
-                {
-                    conn.Open();
-
-                    string deleteQuery = "DELETE FROM Comments WHERE CommentID = @CommentID";
-
-                    using (SQLiteCommand command = new SQLiteCommand(deleteQuery, conn))
-                    {
-                        command.Parameters.AddWithValue("@CommentID", commentId);
-                        int rowsAffected = command.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show("Komentarz został usunięty.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            // Usuń z DataTable bez przeładowania z bazy, lub przeładuj jeśli wolisz świeże dane:
-                            int ticketId = Convert.ToInt32(dataGridView2.CurrentRow.Cells["ID"].Value);
-                            LoadComments(ticketId);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Nie udało się usunąć komentarza.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Błąd podczas usuwania komentarza: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         public void AddComment(int ticketId, int userId, string commentText)
         {
             if (string.IsNullOrWhiteSpace(commentText))
@@ -392,57 +336,59 @@ namespace TickIT
             }
 
             string connectionString = "Data Source=TickIT.db;Version=3;";
+            DataSet dataSet = new DataSet();
 
-            try
+            using (SQLiteConnection conn = new SQLiteConnection(connectionString))
             {
-                using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+                try
                 {
                     conn.Open();
 
-                    DataSet dataSet = new DataSet();
+                    SQLiteDataAdapter adapter = new SQLiteDataAdapter("SELECT * FROM Comments WHERE 1=0", conn);
+                    adapter.Fill(dataSet, "Comments");
 
+                    DataTable commentsTable = dataSet.Tables["Comments"];
+                    DataRow newRow = commentsTable.NewRow();
 
-                    string selectQuery = "SELECT * FROM Comments WHERE 1=0"; // Trik: 0 wierszy
-                    using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(selectQuery, conn))
-                    {
-                        adapter.Fill(dataSet, "Comments");
+                    newRow["TicketID"] = ticketId;
+                    newRow["UserID"] = userId;
+                    newRow["CommentText"] = commentText;
+                    newRow["CreatedDate"] = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
-                        DataRow newRow = dataSet.Tables["Comments"].NewRow();
-                        newRow["TicketID"] = ticketId;
-                        newRow["UserID"] = userId;
-                        newRow["CommentText"] = commentText;
-                        newRow["CreatedDate"] = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                    commentsTable.Rows.Add(newRow);
 
-                        dataSet.Tables["Comments"].Rows.Add(newRow);
+                    SQLiteCommandBuilder commandBuilder = new SQLiteCommandBuilder(adapter);
+                    adapter.Update(dataSet, "Comments");
 
+                    MessageBox.Show("Komentarz został dodany.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        SQLiteCommandBuilder commandBuilder = new SQLiteCommandBuilder(adapter);
-
-                        adapter.Update(dataSet, "Comments");
-
-                        MessageBox.Show("Komentarz został dodany.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    LoadComments(ticketId); 
                 }
-                LoadComments(ticketId);
-            }
-            catch (SQLiteException ex)
-            {
-                MessageBox.Show("Błąd bazy danych: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Błąd: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                catch (SQLiteException ex)
+                {
+                    MessageBox.Show("Błąd bazy danych: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Błąd: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             if (dataGridView1.CurrentRow != null)
             {
-                int ticketId = Convert.ToInt32(dataGridView1.CurrentRow.Cells["TicketID"].Value);
-                AddComment(ticketId, loggedUserID, textBox1.Text.Trim());
-                textBox1.Clear();
+                if (int.TryParse(dataGridView1.CurrentRow.Cells["TicketID"].Value.ToString(), out int ticketId))
+                {
+                    string comment = textBox1.Text.Trim();
+                    AddComment(ticketId, loggedUserID, comment);
+                    textBox1.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Nieprawidłowe ID zgłoszenia.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
@@ -491,11 +437,9 @@ namespace TickIT
                         }
                     }
 
-                    // Pobierz ID statusu "Resolved"
                     string getStatusIdQuery = "SELECT StatusID FROM Statuses WHERE StatusName = 'Resolved'";
                     int resolvedStatusId = Convert.ToInt32(new SQLiteCommand(getStatusIdQuery, conn).ExecuteScalar());
 
-                    // Pobierz dane użytkownika
                     string userQuery = @"
             SELECT U.Email, U.FirstName || ' ' || U.LastName AS FullName
             FROM Tickets T
@@ -515,7 +459,6 @@ namespace TickIT
                         }
                     }
 
-                    // Aktualizacja statusu i daty rozwiązania
                     string updateQuery = @"
             UPDATE Tickets 
             SET StatusID = @StatusID, ResolvedDate = @ResolvedDate 
@@ -530,7 +473,6 @@ namespace TickIT
                     }
                 }
 
-                // Wysyłka e-maila
                 EmailService.SendTicketResolvedEmail(recipientEmail, userName, ticketTitle);
 
                 MessageBox.Show("Zgłoszenie zostało oznaczone jako rozwiązane. Wysłano e-mail do użytkownika.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -542,6 +484,63 @@ namespace TickIT
             }
 
         }
+
+        private void btn_DeleteComment_Click(object sender, EventArgs e)
+        {
+            int commentIdToDelete = (int)numericUpDown1.Value;
+
+            if (commentIdToDelete <= 0)
+            {
+                MessageBox.Show("Proszę podać poprawne ID komentarza.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string connectionString = "Data Source=TickIT.db;Version=3;";
+
+            try
+            {
+                using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+                {
+                    conn.Open();
+                    string checkQuery = @"
+                    SELECT COUNT(*) 
+                    FROM Comments
+                    WHERE TicketID = (SELECT TicketID FROM Comments WHERE CommentID = @CommentID)";
+                    using (SQLiteCommand checkCmd = new SQLiteCommand(checkQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@CommentID", commentIdToDelete);
+                        int countComments = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                        if (countComments <= 1)
+                        {
+                            MessageBox.Show("Nie można usunąć jedynego komentarza w zgłoszeniu!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
+                    string deleteQuery = "DELETE FROM Comments WHERE CommentID = @CommentID";
+                    using (SQLiteCommand cmd = new SQLiteCommand(deleteQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@CommentID", commentIdToDelete);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Komentarz został usunięty.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                int ticketId = Convert.ToInt32(dataGridView1.CurrentRow.Cells["TicketID"].Value);
+                LoadComments(ticketId);
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show("Błąd bazy danych: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }
 

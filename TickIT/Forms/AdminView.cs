@@ -35,7 +35,7 @@ namespace TickIT
                 {
                     conn.Open();
 
-                    string query = "SELECT UserID, FirstName, LastName, Email, Phone, Role, IsInactive FROM Users"; // Pobranie użytkowników
+                    string query = "SELECT UserID, FirstName, LastName, Email, Phone, Role, IsInactive FROM Users";
 
                     using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, conn))
                     {
@@ -43,14 +43,13 @@ namespace TickIT
                         adapter.Fill(dt);
 
                         dataGridView_Users.DataSource = dt;
-                        FormatDataGridView(); // Formatowanie kolumn
+                        FormatDataGridView(); 
 
-                        // szare tło dla nieaktywnych userow
                         foreach (DataGridViewRow row in dataGridView_Users.Rows)
                         {
                             if (row.Cells["IsInactive"].Value != null && Convert.ToInt32(row.Cells["IsInactive"].Value) == 1)
                             {
-                                row.DefaultCellStyle.BackColor = Color.LightGray; // Szare tło dla nieaktywnych
+                                row.DefaultCellStyle.BackColor = Color.LightGray; 
                                 row.DefaultCellStyle.ForeColor = Color.DarkGray;  
                             }
                         }
@@ -65,12 +64,6 @@ namespace TickIT
             {
                 MessageBox.Show("Error: " + ex1.Message);
             }
-        }
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void FormatDataGridView()
@@ -111,6 +104,8 @@ namespace TickIT
                 return;
 
             string connectionString = "Data Source=TickIT.db;Version=3;";
+            string selectQuery = "SELECT * FROM Users";
+            string updateQuery = "UPDATE Users SET IsInactive = @IsInactive WHERE UserID = @UserID";
 
             try
             {
@@ -118,25 +113,34 @@ namespace TickIT
                 {
                     conn.Open();
 
-                    string query = "UPDATE Users SET IsInactive = @NewStatus WHERE UserID = @UserID";
+                    var adapter = new SQLiteDataAdapter(selectQuery, conn);
+                    var commandBuilder = new SQLiteCommandBuilder(adapter); // choć niekonieczny tutaj
 
-                    using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                    var dsUsers = new DataSet();
+                    adapter.Fill(dsUsers, "Users");
+
+                    DataRow[] rows = dsUsers.Tables["Users"].Select("UserID = " + userId);
+
+                    if (rows.Length == 0)
                     {
-                        cmd.Parameters.AddWithValue("@NewStatus", newStatus);
-                        cmd.Parameters.AddWithValue("@UserID", userId);
-                        int rowsAffected = cmd.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            string msg = newStatus == 1 ? "Użytkownik został dezaktywowany." : "Użytkownik został aktywowany.";
-                            MessageBox.Show(msg, "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            RefreshDataGridView();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Nie udało się zaktualizować użytkownika.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        MessageBox.Show("Nie znaleziono użytkownika.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
+
+                    DataRow row = rows[0];
+                    row["IsInactive"] = newStatus;
+
+                    // Przypisz własny UpdateCommand
+                    adapter.UpdateCommand = new SQLiteCommand(updateQuery, conn);
+                    adapter.UpdateCommand.Parameters.Add("@IsInactive", DbType.Int32, 0, "IsInactive");
+                    adapter.UpdateCommand.Parameters.Add("@UserID", DbType.Int32, 0, "UserID");
+
+                    // W razie potrzeby: AcceptChangesDuringUpdate = false
+                    adapter.Update(dsUsers, "Users");
+
+                    string msg = newStatus == 1 ? "Użytkownik został dezaktywowany." : "Użytkownik został aktywowany.";
+                    MessageBox.Show(msg, "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RefreshDataGridView();
                 }
             }
             catch (SQLiteException ex)
@@ -188,7 +192,6 @@ namespace TickIT
                         }
                     }
 
-                    // Dodanie nowego użytkownika
                     string insertQuery = @"INSERT INTO Users (FirstName, LastName, Email, Phone, Role, PasswordHash, IsInactive, IsPasswordChangeRequired) 
                                    VALUES (@FirstName, @LastName, @Email, @Phone, @Role, @PasswordHash, 0, 1)";
 
@@ -234,14 +237,14 @@ namespace TickIT
 
                 numericUpDownID_edit.Value = Convert.ToInt32(row.Cells["UserID"].Value);
                 textBoxFirstname_edit.Text = row.Cells["FirstName"].Value.ToString();
-                textBoxLastName_edit.Text = row.Cells["LastName"].Value.ToString();
+                textBoxLastname_edit.Text = row.Cells["LastName"].Value.ToString();
                 textBoxEmail_edit.Text = row.Cells["Email"].Value.ToString();
                 textBoxPhone_edit.Text = row.Cells["Phone"].Value.ToString();
                 comboBoxRole_edit.Text = row.Cells["Role"].Value.ToString();
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnEditUser_Click(object sender, EventArgs e)
         {
             int userId = (int)numericUpDownID_edit.Value;
             if (userId == 0)
@@ -250,38 +253,75 @@ namespace TickIT
                 return;
             }
 
-            string firstName = txtFirstName.Text.Trim();
-            string lastName = txtLastName.Text.Trim();
-            string email = txtEmail.Text.Trim();
-            string phone = txtPhone.Text.Trim();
-            string role = cmbRole.Text;
+            string firstName = textBoxFirstname_edit.Text.Trim();
+            string lastName = textBoxLastname_edit.Text.Trim();
+            string email = textBoxEmail_edit.Text.Trim();
+            string phone = textBoxPhone_edit.Text.Trim();
+            string role = comboBoxRole_edit.SelectedItem?.ToString().Trim();
+
+            if (role != "User" && role != "Technician" && role != "Admin")
+            {
+                MessageBox.Show("Wybierz poprawną rolę: User, Technician lub Admin.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             string connectionString = "Data Source=TickIT.db;Version=3;";
-
             try
             {
                 using (SQLiteConnection conn = new SQLiteConnection(connectionString))
                 {
                     conn.Open();
 
-                    string query = @"UPDATE Users SET 
-                             FirstName = @FirstName, 
-                             LastName = @LastName, 
-                             Email = @Email, 
-                             Phone = @Phone, 
-                             Role = @Role 
-                             WHERE UserID = @UserID";
+                    string selectQuery = "SELECT FirstName, LastName, Email, Phone, Role FROM Users WHERE UserID = @UserID";
+                    DataTable dbData = new DataTable();
 
-                    using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                    using (SQLiteCommand cmd = new SQLiteCommand(selectQuery, conn))
                     {
-                        cmd.Parameters.AddWithValue("@FirstName", firstName);
-                        cmd.Parameters.AddWithValue("@LastName", lastName);
-                        cmd.Parameters.AddWithValue("@Email", email);
-                        cmd.Parameters.AddWithValue("@Phone", phone);
-                        cmd.Parameters.AddWithValue("@Role", role);
                         cmd.Parameters.AddWithValue("@UserID", userId);
+                        using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(cmd))
+                        {
+                            adapter.Fill(dbData);
+                        }
+                    }
 
-                        int rowsAffected = cmd.ExecuteNonQuery();
+                    if (dbData.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Nie znaleziono użytkownika w bazie danych.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    DataRow dbRow = dbData.Rows[0];
+
+                    if (
+                        dbRow["FirstName"].ToString() == firstName &&
+                        dbRow["LastName"].ToString() == lastName &&
+                        dbRow["Email"].ToString() == email &&
+                        dbRow["Phone"].ToString() == phone &&
+                        dbRow["Role"].ToString() == role
+                    )
+                    {
+                        MessageBox.Show("Nie wprowadzono żadnych zmian.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    string updateQuery = @"UPDATE Users SET 
+                      FirstName = @FirstName, 
+                      LastName = @LastName, 
+                      Email = @Email, 
+                      Phone = @Phone, 
+                      Role = @Role 
+                      WHERE UserID = @UserID";
+
+                    using (SQLiteCommand updateCmd = new SQLiteCommand(updateQuery, conn))
+                    {
+                        updateCmd.Parameters.AddWithValue("@FirstName", firstName);
+                        updateCmd.Parameters.AddWithValue("@LastName", lastName);
+                        updateCmd.Parameters.AddWithValue("@Email", email);
+                        updateCmd.Parameters.AddWithValue("@Phone", phone);
+                        updateCmd.Parameters.AddWithValue("@Role", role);
+                        updateCmd.Parameters.AddWithValue("@UserID", userId);
+
+                        int rowsAffected = updateCmd.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
                         {
@@ -304,5 +344,6 @@ namespace TickIT
                 MessageBox.Show("Błąd: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

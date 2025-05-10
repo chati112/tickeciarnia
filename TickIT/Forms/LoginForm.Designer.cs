@@ -144,7 +144,6 @@
             this.button2.TabIndex = 10;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // LoginForm
             // 
@@ -164,7 +163,6 @@
             this.Controls.Add(this.textBox_email);
             this.Name = "LoginForm";
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

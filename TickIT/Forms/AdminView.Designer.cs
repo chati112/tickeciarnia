@@ -41,9 +41,9 @@
             this.btn_DeactivateUser = new System.Windows.Forms.Button();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxLastName_edit = new System.Windows.Forms.TextBox();
+            this.textBoxLastname_edit = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEditUser = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -194,12 +194,12 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Lastname:";
             // 
-            // textBoxLastName_edit
+            // textBoxLastname_edit
             // 
-            this.textBoxLastName_edit.Location = new System.Drawing.Point(617, 249);
-            this.textBoxLastName_edit.Name = "textBoxLastName_edit";
-            this.textBoxLastName_edit.Size = new System.Drawing.Size(100, 20);
-            this.textBoxLastName_edit.TabIndex = 26;
+            this.textBoxLastname_edit.Location = new System.Drawing.Point(617, 249);
+            this.textBoxLastname_edit.Name = "textBoxLastname_edit";
+            this.textBoxLastname_edit.Size = new System.Drawing.Size(100, 20);
+            this.textBoxLastname_edit.TabIndex = 26;
             // 
             // label5
             // 
@@ -210,15 +210,15 @@
             this.label5.TabIndex = 25;
             this.label5.Text = "Lastname:";
             // 
-            // button1
+            // btnEditUser
             // 
-            this.button1.Location = new System.Drawing.Point(491, 370);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(247, 35);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Edit user";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnEditUser.Location = new System.Drawing.Point(491, 370);
+            this.btnEditUser.Name = "btnEditUser";
+            this.btnEditUser.Size = new System.Drawing.Size(247, 35);
+            this.btnEditUser.TabIndex = 24;
+            this.btnEditUser.Text = "Edit user";
+            this.btnEditUser.UseVisualStyleBackColor = true;
+            this.btnEditUser.Click += new System.EventHandler(this.button1_Click);
             // 
             // label6
             // 
@@ -453,9 +453,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 509);
-            this.Controls.Add(this.textBoxLastName_edit);
+            this.Controls.Add(this.textBoxLastname_edit);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEditUser);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBoxEmail_edit);
             this.Controls.Add(this.txtLastName);
@@ -506,9 +506,9 @@
         private System.Windows.Forms.Button btn_DeactivateUser;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxLastName_edit;
+        private System.Windows.Forms.TextBox textBoxLastname_edit;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEditUser;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;

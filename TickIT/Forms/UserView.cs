@@ -28,10 +28,7 @@ namespace TickIT
         private void UserView_Load(object sender, EventArgs e)
         {
             LoadUserTickets(currentUserId);
-
             bindingNavigatorTickets.BindingSource = ticketsBindingSource;
-
-
             ticketsBindingSource.PositionChanged += TicketsBindingSource_PositionChanged;
         }
 
@@ -116,16 +113,15 @@ namespace TickIT
                 {
                     conn.Open();
 
-                    // Ładowanie szczegółów ticketa
                     string queryDetails = @"
                     SELECT 
-                    T.TicketID AS ID, 
-                    T.CreatedDate AS 'Reported date', 
-                    T.ResolvedDate AS 'Resolved date', 
-                    U1.FirstName || ' ' || U1.LastName AS Customer,
-                    U2.FirstName || ' ' || U2.LastName AS Asignee,
-                    S.StatusName AS Status,
-                    P.PriorityName AS Priority
+                        T.TicketID AS ID, 
+                        strftime('%Y-%m-%d %H:%M', T.CreatedDate) AS 'Reported date', 
+                        strftime('%Y-%m-%d %H:%M', T.ResolvedDate) AS 'Resolved date', 
+                        U1.FirstName || ' ' || U1.LastName AS Customer,
+                        U2.FirstName || ' ' || U2.LastName AS Asignee,
+                        S.StatusName AS Status,
+                        P.PriorityName AS Priority
                     FROM Tickets T
                     INNER JOIN Users U1 ON T.UserID = U1.UserID
                     LEFT JOIN Users U2 ON T.TechnicianID = U2.UserID
@@ -148,16 +144,16 @@ namespace TickIT
                         dataGridViewDetails.Columns["Priority"].Width = 50;
                     }
 
-                    // Ładowanie komentarzy
                     string queryJournal = @"
                     SELECT 
-                    C.CommentText AS Comment, 
-                    C.CreatedDate AS Date,
-                    U.FirstName || ' ' || U.LastName AS Author
+                        C.CommentText AS Comment, 
+                        strftime('%Y-%m-%d %H:%M', C.CreatedDate) AS Date,
+                        U.FirstName || ' ' || U.LastName AS Author
                     FROM Comments C
                     INNER JOIN Users U ON C.UserID = U.UserID
                     WHERE C.TicketID = @TicketID
                     ORDER BY C.CreatedDate ASC";
+
 
                     using (SQLiteDataAdapter adapterJournal = new SQLiteDataAdapter(queryJournal, conn))
                     {
@@ -236,14 +232,12 @@ namespace TickIT
                         // Tworzymy CommandBuilder do wygenerowania INSERT automatycznie
                         SQLiteCommandBuilder commandBuilder = new SQLiteCommandBuilder(adapter);
 
-                        // Zapisujemy zmiany do bazy
                         adapter.Update(dataSet, "Comments");
 
                         MessageBox.Show("Komentarz został dodany.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
 
-                // Odświeżenie widoku komentarzy
                 LoadTicketDetailsAndJournal(ticketId);
             }
             catch (SQLiteException ex)
@@ -263,7 +257,7 @@ namespace TickIT
             {
                 int ticketId = Convert.ToInt32(dataGridViewTickets.CurrentRow.Cells["TicketID"].Value);
                 AddComment(ticketId, currentUserId, textBoxActivity.Text.Trim());
-                textBoxActivity.Clear(); // Czyścimy textbox po dodaniu komentarza
+                textBoxActivity.Clear(); 
             }
             else
             {
