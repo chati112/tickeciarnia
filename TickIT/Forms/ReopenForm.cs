@@ -108,7 +108,7 @@ namespace TickIT.Forms.user
 
                         if (result == null)
                         {
-                            MessageBox.Show("Nie można ponownie otworzyć tego ticketa. Upewnij się, że podałeś poprawne ID i ma zgłoszenie status 'Resolved'.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Nie można ponownie otworzyć tego ticketa. Upewnij się, że podałeś poprawne ID zgłoszenia i ma ono status 'Resolved'.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
                     }

@@ -34,12 +34,12 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAddCom = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.buttonAssign = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonResolve = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorComments = new System.Windows.Forms.BindingNavigator(this.components);
@@ -110,15 +110,19 @@
             this.textBox1.Size = new System.Drawing.Size(425, 132);
             this.textBox1.TabIndex = 4;
             // 
-            // button1
+            // buttonAddCom
             // 
-            this.button1.Location = new System.Drawing.Point(314, 468);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(425, 37);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Add ";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAddCom.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonAddCom.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAddCom.Font = new System.Drawing.Font("Sitka Small", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAddCom.ForeColor = System.Drawing.Color.White;
+            this.buttonAddCom.Location = new System.Drawing.Point(314, 468);
+            this.buttonAddCom.Name = "buttonAddCom";
+            this.buttonAddCom.Size = new System.Drawing.Size(425, 37);
+            this.buttonAddCom.TabIndex = 5;
+            this.buttonAddCom.Text = "Add ";
+            this.buttonAddCom.UseVisualStyleBackColor = false;
+            this.buttonAddCom.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -154,23 +158,31 @@
             // 
             // buttonAssign
             // 
+            this.buttonAssign.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonAssign.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAssign.Font = new System.Drawing.Font("Sitka Small", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAssign.ForeColor = System.Drawing.Color.White;
             this.buttonAssign.Location = new System.Drawing.Point(38, 321);
             this.buttonAssign.Name = "buttonAssign";
             this.buttonAssign.Size = new System.Drawing.Size(218, 35);
             this.buttonAssign.TabIndex = 9;
             this.buttonAssign.Text = "Assign to me";
-            this.buttonAssign.UseVisualStyleBackColor = true;
+            this.buttonAssign.UseVisualStyleBackColor = false;
             this.buttonAssign.Click += new System.EventHandler(this.buttonAssign_Click);
             // 
-            // button3
+            // buttonResolve
             // 
-            this.button3.Location = new System.Drawing.Point(38, 369);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(218, 35);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Resolve";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonResolve.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonResolve.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonResolve.Font = new System.Drawing.Font("Sitka Small", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonResolve.ForeColor = System.Drawing.Color.White;
+            this.buttonResolve.Location = new System.Drawing.Point(38, 369);
+            this.buttonResolve.Name = "buttonResolve";
+            this.buttonResolve.Size = new System.Drawing.Size(218, 35);
+            this.buttonResolve.TabIndex = 10;
+            this.buttonResolve.Text = "Resolve";
+            this.buttonResolve.UseVisualStyleBackColor = false;
+            this.buttonResolve.Click += new System.EventHandler(this.button3_Click);
             // 
             // bindingNavigatorComments
             // 
@@ -197,7 +209,7 @@
             this.bindingNavigatorComments.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigatorComments.Name = "bindingNavigatorComments";
             this.bindingNavigatorComments.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigatorComments.Size = new System.Drawing.Size(257, 25);
+            this.bindingNavigatorComments.Size = new System.Drawing.Size(226, 25);
             this.bindingNavigatorComments.TabIndex = 13;
             this.bindingNavigatorComments.Text = "bindingNavigator1";
             // 
@@ -303,12 +315,16 @@
             // 
             // btn_DeleteComment
             // 
+            this.btn_DeleteComment.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_DeleteComment.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_DeleteComment.Font = new System.Drawing.Font("Sitka Small", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn_DeleteComment.ForeColor = System.Drawing.Color.White;
             this.btn_DeleteComment.Location = new System.Drawing.Point(106, 21);
             this.btn_DeleteComment.Name = "btn_DeleteComment";
             this.btn_DeleteComment.Size = new System.Drawing.Size(95, 50);
             this.btn_DeleteComment.TabIndex = 15;
             this.btn_DeleteComment.Text = "Delete";
-            this.btn_DeleteComment.UseVisualStyleBackColor = true;
+            this.btn_DeleteComment.UseVisualStyleBackColor = false;
             this.btn_DeleteComment.Click += new System.EventHandler(this.btn_DeleteComment_Click);
             // 
             // groupBox1
@@ -339,12 +355,12 @@
             this.ClientSize = new System.Drawing.Size(1362, 522);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bindingNavigatorComments);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.buttonResolve);
             this.Controls.Add(this.buttonAssign);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonAddCom);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
@@ -373,12 +389,12 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAddCom;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Button buttonAssign;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonResolve;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.BindingSource bindingSource2;
         private System.Windows.Forms.BindingNavigator bindingNavigatorComments;

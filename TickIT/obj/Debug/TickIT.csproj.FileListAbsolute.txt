@@ -161,3 +161,5 @@ C:\Users\Jakub\OneDrive\Pulpit\Nowy folder (5)\tickeciarnia\TickIT\obj\Debug\Tic
 C:\Users\Jakub\OneDrive\Pulpit\Nowy folder (5)\tickeciarnia\TickIT\obj\Debug\TickIT.csproj.Up2Date
 C:\Users\Jakub\OneDrive\Pulpit\Nowy folder (5)\tickeciarnia\TickIT\obj\Debug\TickIT.exe
 C:\Users\Jakub\OneDrive\Pulpit\Nowy folder (5)\tickeciarnia\TickIT\obj\Debug\TickIT.pdb
+C:\Users\kamil\OneDrive\Pulpit\studia\ado.net\tickeciarnia\TickIT\obj\Debug\TickIT.Forms.ChangePasswordForm.resources
+C:\Users\kamil\OneDrive\Pulpit\studia\ado.net\tickeciarnia\TickIT\obj\Debug\TickIT.Forms.user.ReopenForm.resources

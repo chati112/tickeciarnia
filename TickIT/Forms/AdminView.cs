@@ -23,6 +23,8 @@ namespace TickIT
         private void Form1_Load(object sender, EventArgs e)
         {
             RefreshDataGridView();
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPhone_edit_KeyPress);
+
         }
 
         private void RefreshDataGridView()
@@ -244,7 +246,7 @@ namespace TickIT
             }
         }
 
-        private void btnEditUser_Click(object sender, EventArgs e)
+        private void btnEditUser_Click_1(object sender, EventArgs e)
         {
             int userId = (int)numericUpDownID_edit.Value;
             if (userId == 0)
@@ -345,5 +347,14 @@ namespace TickIT
             }
         }
 
+        private void textBoxPhone_edit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        
     }
 }

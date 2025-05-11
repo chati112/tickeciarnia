@@ -30,7 +30,7 @@
         {
             this.textBox_email = new System.Windows.Forms.TextBox();
             this.textBox_password = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,19 +58,19 @@
             this.textBox_password.Size = new System.Drawing.Size(149, 20);
             this.textBox_password.TabIndex = 1;
             // 
-            // button1
+            // btnLogin
             // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Sitka Small", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(52, 285);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(179, 39);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "LOG IN";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnLogin.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Sitka Small", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(52, 285);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(179, 39);
+            this.btnLogin.TabIndex = 2;
+            this.btnLogin.Text = "LOG IN";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -97,11 +97,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(275, 18);
+            this.label3.Location = new System.Drawing.Point(252, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 65);
+            this.label3.Size = new System.Drawing.Size(138, 65);
             this.label3.TabIndex = 5;
-            this.label3.Text = "dane logowania:\r\n\r\nuser  user\r\nadmin admin\r\ntechnician technician\r\n";
+            this.label3.Text = "dane logowania:\r\n\r\nuser@user.com  user\r\nadmin@admin.com  admin\r\ntech@tech.com  te" +
+    "chnician\r\n";
             // 
             // btn_resetpwd
             // 
@@ -158,7 +159,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.textBox_password);
             this.Controls.Add(this.textBox_email);
             this.Name = "LoginForm";
@@ -172,7 +173,7 @@
 
         private System.Windows.Forms.TextBox textBox_email;
         private System.Windows.Forms.TextBox textBox_password;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

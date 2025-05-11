@@ -93,12 +93,16 @@
             // 
             // buttonAddComment
             // 
+            this.buttonAddComment.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonAddComment.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonAddComment.Font = new System.Drawing.Font("Sitka Small", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAddComment.ForeColor = System.Drawing.Color.White;
             this.buttonAddComment.Location = new System.Drawing.Point(622, 449);
             this.buttonAddComment.Name = "buttonAddComment";
-            this.buttonAddComment.Size = new System.Drawing.Size(316, 23);
+            this.buttonAddComment.Size = new System.Drawing.Size(316, 24);
             this.buttonAddComment.TabIndex = 14;
             this.buttonAddComment.Text = "Add";
-            this.buttonAddComment.UseVisualStyleBackColor = true;
+            this.buttonAddComment.UseVisualStyleBackColor = false;
             this.buttonAddComment.Click += new System.EventHandler(this.buttonAddComment_Click);
             // 
             // textBoxActivity
@@ -165,22 +169,30 @@
             // 
             // btnChangePriority
             // 
+            this.btnChangePriority.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnChangePriority.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnChangePriority.Font = new System.Drawing.Font("Sitka Small", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnChangePriority.ForeColor = System.Drawing.Color.White;
             this.btnChangePriority.Location = new System.Drawing.Point(467, 407);
             this.btnChangePriority.Name = "btnChangePriority";
-            this.btnChangePriority.Size = new System.Drawing.Size(121, 23);
+            this.btnChangePriority.Size = new System.Drawing.Size(121, 27);
             this.btnChangePriority.TabIndex = 20;
             this.btnChangePriority.Text = "Change priority";
-            this.btnChangePriority.UseVisualStyleBackColor = true;
+            this.btnChangePriority.UseVisualStyleBackColor = false;
             this.btnChangePriority.Click += new System.EventHandler(this.btnChangePriority_Click);
             // 
             // btn_reopen
             // 
+            this.btn_reopen.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_reopen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_reopen.Font = new System.Drawing.Font("Sitka Small", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn_reopen.ForeColor = System.Drawing.Color.White;
             this.btn_reopen.Location = new System.Drawing.Point(311, 380);
             this.btn_reopen.Name = "btn_reopen";
             this.btn_reopen.Size = new System.Drawing.Size(121, 63);
             this.btn_reopen.TabIndex = 22;
             this.btn_reopen.Text = "Reopen";
-            this.btn_reopen.UseVisualStyleBackColor = true;
+            this.btn_reopen.UseVisualStyleBackColor = false;
             this.btn_reopen.Click += new System.EventHandler(this.btn_reopen_Click);
             // 
             // bindingNavigatorTickets
@@ -209,7 +221,7 @@
             this.bindingNavigatorTickets.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.bindingNavigatorTickets.Name = "bindingNavigatorTickets";
             this.bindingNavigatorTickets.PositionItem = this.bindingNavigatorPositionItem1;
-            this.bindingNavigatorTickets.Size = new System.Drawing.Size(286, 27);
+            this.bindingNavigatorTickets.Size = new System.Drawing.Size(255, 27);
             this.bindingNavigatorTickets.TabIndex = 24;
             this.bindingNavigatorTickets.Text = "bindingNavigator2";
             // 

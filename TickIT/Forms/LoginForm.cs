@@ -18,7 +18,7 @@ namespace TickIT
         public LoginForm()
         {
             InitializeComponent();
-            this.AcceptButton = button1;
+            this.AcceptButton = btnLogin;
         }
 
         private void button1_Click(object sender, EventArgs e)

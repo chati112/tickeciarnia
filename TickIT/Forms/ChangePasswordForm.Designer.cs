@@ -62,12 +62,16 @@
             // 
             // btn_Confirm
             // 
+            this.btn_Confirm.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_Confirm.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Confirm.Font = new System.Drawing.Font("Sitka Small", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn_Confirm.ForeColor = System.Drawing.Color.White;
             this.btn_Confirm.Location = new System.Drawing.Point(32, 233);
             this.btn_Confirm.Name = "btn_Confirm";
             this.btn_Confirm.Size = new System.Drawing.Size(129, 23);
             this.btn_Confirm.TabIndex = 3;
             this.btn_Confirm.Text = "Confirm";
-            this.btn_Confirm.UseVisualStyleBackColor = true;
+            this.btn_Confirm.UseVisualStyleBackColor = false;
             this.btn_Confirm.Click += new System.EventHandler(this.btn_Confirm_Click);
             // 
             // label1

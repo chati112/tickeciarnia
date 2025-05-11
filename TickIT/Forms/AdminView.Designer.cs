@@ -37,8 +37,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btn_AddUser = new System.Windows.Forms.Button();
-            this.btn_DeactivateUser = new System.Windows.Forms.Button();
+            this.btnAddUser = new System.Windows.Forms.Button();
+            this.btnDeactivateUser = new System.Windows.Forms.Button();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxLastname_edit = new System.Windows.Forms.TextBox();
@@ -119,6 +119,7 @@
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(491, 78);
+            this.txtPhone.MaxLength = 9;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(100, 20);
             this.txtPhone.TabIndex = 4;
@@ -157,26 +158,26 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Role:";
             // 
-            // btn_AddUser
+            // btnAddUser
             // 
-            this.btn_AddUser.Location = new System.Drawing.Point(491, 162);
-            this.btn_AddUser.Name = "btn_AddUser";
-            this.btn_AddUser.Size = new System.Drawing.Size(247, 35);
-            this.btn_AddUser.TabIndex = 11;
-            this.btn_AddUser.Text = "Add user";
-            this.btn_AddUser.UseVisualStyleBackColor = true;
-            this.btn_AddUser.Click += new System.EventHandler(this.btn_AddUser_Click);
+            this.btnAddUser.Location = new System.Drawing.Point(491, 162);
+            this.btnAddUser.Name = "btnAddUser";
+            this.btnAddUser.Size = new System.Drawing.Size(247, 35);
+            this.btnAddUser.TabIndex = 11;
+            this.btnAddUser.Text = "Add user";
+            this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.Click += new System.EventHandler(this.btn_AddUser_Click);
             // 
-            // btn_DeactivateUser
+            // btnDeactivateUser
             // 
-            this.btn_DeactivateUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_DeactivateUser.Location = new System.Drawing.Point(109, 15);
-            this.btn_DeactivateUser.Name = "btn_DeactivateUser";
-            this.btn_DeactivateUser.Size = new System.Drawing.Size(143, 35);
-            this.btn_DeactivateUser.TabIndex = 13;
-            this.btn_DeactivateUser.Text = "Deactivate / Activate user";
-            this.btn_DeactivateUser.UseVisualStyleBackColor = false;
-            this.btn_DeactivateUser.Click += new System.EventHandler(this.btn_DeactivateUser_Click);
+            this.btnDeactivateUser.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDeactivateUser.Location = new System.Drawing.Point(109, 15);
+            this.btnDeactivateUser.Name = "btnDeactivateUser";
+            this.btnDeactivateUser.Size = new System.Drawing.Size(143, 35);
+            this.btnDeactivateUser.TabIndex = 13;
+            this.btnDeactivateUser.Text = "Deactivate / Activate user";
+            this.btnDeactivateUser.UseVisualStyleBackColor = false;
+            this.btnDeactivateUser.Click += new System.EventHandler(this.btn_DeactivateUser_Click);
             // 
             // txtLastName
             // 
@@ -218,7 +219,7 @@
             this.btnEditUser.TabIndex = 24;
             this.btnEditUser.Text = "Edit user";
             this.btnEditUser.UseVisualStyleBackColor = true;
-            this.btnEditUser.Click += new System.EventHandler(this.button1_Click);
+            this.btnEditUser.Click += new System.EventHandler(this.btnEditUser_Click_1);
             // 
             // label6
             // 
@@ -383,9 +384,11 @@
             // textBoxPhone_edit
             // 
             this.textBoxPhone_edit.Location = new System.Drawing.Point(18, 104);
+            this.textBoxPhone_edit.MaxLength = 9;
             this.textBoxPhone_edit.Name = "textBoxPhone_edit";
             this.textBoxPhone_edit.Size = new System.Drawing.Size(100, 20);
             this.textBoxPhone_edit.TabIndex = 19;
+            this.textBoxPhone_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPhone_edit_KeyPress);
             // 
             // label15
             // 
@@ -440,7 +443,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel4.Controls.Add(this.btn_DeactivateUser);
+            this.panel4.Controls.Add(this.btnDeactivateUser);
             this.panel4.Controls.Add(this.numericUpDownID);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Location = new System.Drawing.Point(483, 432);
@@ -460,7 +463,7 @@
             this.Controls.Add(this.textBoxEmail_edit);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btn_AddUser);
+            this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -474,7 +477,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Name = "AdminView";
-            this.Text = "Form1";
+            this.Text = "AdminView";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Users)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -502,8 +505,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btn_AddUser;
-        private System.Windows.Forms.Button btn_DeactivateUser;
+        private System.Windows.Forms.Button btnAddUser;
+        private System.Windows.Forms.Button btnDeactivateUser;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxLastname_edit;
