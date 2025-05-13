@@ -182,7 +182,7 @@
             this.buttonResolve.TabIndex = 10;
             this.buttonResolve.Text = "Resolve";
             this.buttonResolve.UseVisualStyleBackColor = false;
-            this.buttonResolve.Click += new System.EventHandler(this.button3_Click);
+            this.buttonResolve.Click += new System.EventHandler(this.buttonResolve_Click);
             // 
             // bindingNavigatorComments
             // 

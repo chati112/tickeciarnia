@@ -216,7 +216,7 @@ namespace TickIT
                     DataSet dataSet = new DataSet();
 
 
-                    string selectQuery = "SELECT * FROM Comments WHERE 1=0"; // Trik: 0 wierszy
+                    string selectQuery = "SELECT * FROM Comments WHERE 1=0"; 
                     using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(selectQuery, conn))
                     {
                         adapter.Fill(dataSet, "Comments");
@@ -229,7 +229,7 @@ namespace TickIT
 
                         dataSet.Tables["Comments"].Rows.Add(newRow);
 
-                        // Tworzymy CommandBuilder do wygenerowania INSERT automatycznie
+                        
                         SQLiteCommandBuilder commandBuilder = new SQLiteCommandBuilder(adapter);
 
                         adapter.Update(dataSet, "Comments");

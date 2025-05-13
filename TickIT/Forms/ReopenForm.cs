@@ -65,8 +65,8 @@ namespace TickIT.Forms.user
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+            private void btnReopenConfirm_Click(object sender, EventArgs e)
+            {
             int ticketId = (int)numericUpDownReopenID.Value;
 
             if (comboBoxReason.SelectedIndex == -1)
@@ -159,10 +159,16 @@ namespace TickIT.Forms.user
                 MessageBox.Show("Błąd: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        
     }
 }

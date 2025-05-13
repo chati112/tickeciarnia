@@ -21,7 +21,7 @@ namespace TickIT
             this.AcceptButton = btnLogin;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+       private void btnLogin_Click(object sender, EventArgs e)
         {
             string connectionString = "Data Source=TickIT.db;Version=3;";
             string enteredUsername = textBox_email.Text.Trim();
@@ -61,14 +61,14 @@ namespace TickIT
                                 int userID = Convert.ToInt32(reader["UserID"]);
                                 int isPasswordChangeRequired = Convert.ToInt32(reader["IsPasswordChangeRequired"]);
 
-                                if (enteredPassword == storedPassword) 
+                                if (enteredPassword == storedPassword)
                                 {
                                     if (isPasswordChangeRequired == 1)
                                     {
                                         MessageBox.Show("Zostałeś zalogowany, ale musisz zmienić hasło.", "Wymagana zmiana hasła", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         ChangePasswordForm changePasswordForm = new ChangePasswordForm();
                                         changePasswordForm.Show();
-                                        this.Hide(); 
+                                        this.Hide();
                                     }
                                     else
                                     {
@@ -96,7 +96,7 @@ namespace TickIT
             {
                 MessageBox.Show("Błąd: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+       }
 
 
         private void OpenOperatingPanel(string role, int userID)
@@ -131,5 +131,6 @@ namespace TickIT
             recoverPasswordForm.ShowDialog();
         }
 
+        
     }
 }

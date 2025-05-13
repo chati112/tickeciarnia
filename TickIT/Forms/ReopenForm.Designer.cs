@@ -85,7 +85,7 @@
             this.btnReopenConfirm.TabIndex = 3;
             this.btnReopenConfirm.Text = "confirm";
             this.btnReopenConfirm.UseVisualStyleBackColor = false;
-            this.btnReopenConfirm.Click += new System.EventHandler(this.button1_Click);
+            this.btnReopenConfirm.Click += new System.EventHandler(this.btnReopenConfirm_Click);
             // 
             // buttonCancel
             // 

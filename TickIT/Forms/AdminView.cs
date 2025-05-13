@@ -26,6 +26,80 @@ namespace TickIT
             this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPhone_edit_KeyPress);
 
         }
+        
+        private void btn_AddUser_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source=TickIT.db;Version=3;";
+
+            string firstName = txtFirstName.Text.Trim();
+            string lastName = txtLastName.Text.Trim();
+            string email = txtEmail.Text.Trim();
+            string phone = txtPhone.Text.Trim();
+            string role = cmbRole.SelectedItem?.ToString();
+            string password = "1234"; 
+
+            if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName) ||
+                string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(role))
+            {
+                MessageBox.Show("Wypełnij wszystkie wymagane pola.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string checkQuery = "SELECT COUNT(*) FROM Users WHERE Email = @Email";
+                    using (SQLiteCommand checkCmd = new SQLiteCommand(checkQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@Email", email);
+                        long count = (long)checkCmd.ExecuteScalar();
+                        if (count > 0)
+                        {
+                            MessageBox.Show("Użytkownik o podanym adresie email już istnieje.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
+                    string insertQuery = @"INSERT INTO Users (FirstName, LastName, Email, Phone, Role, PasswordHash, IsInactive, IsPasswordChangeRequired) 
+                                   VALUES (@FirstName, @LastName, @Email, @Phone, @Role, @PasswordHash, 0, 1)";
+
+                    using (SQLiteDataAdapter adapter = new SQLiteDataAdapter())
+                    {
+                        adapter.InsertCommand = new SQLiteCommand(insertQuery, conn);
+                        adapter.InsertCommand.Parameters.AddWithValue("@FirstName", firstName);
+                        adapter.InsertCommand.Parameters.AddWithValue("@LastName", lastName);
+                        adapter.InsertCommand.Parameters.AddWithValue("@Email", email);
+                        adapter.InsertCommand.Parameters.AddWithValue("@Phone", phone);
+                        adapter.InsertCommand.Parameters.AddWithValue("@Role", role);
+                        adapter.InsertCommand.Parameters.AddWithValue("@PasswordHash", password); 
+
+                        int rows = adapter.InsertCommand.ExecuteNonQuery();
+
+                        if (rows > 0)
+                        {
+                            MessageBox.Show("Użytkownik został dodany.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            RefreshDataGridView(); 
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nie udało się dodać użytkownika.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show("Błąd SQLite: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd: " + ex.Message);
+            }
+        }
+
 
         private void RefreshDataGridView()
         {
@@ -116,7 +190,7 @@ namespace TickIT
                     conn.Open();
 
                     var adapter = new SQLiteDataAdapter(selectQuery, conn);
-                    var commandBuilder = new SQLiteCommandBuilder(adapter); // choć niekonieczny tutaj
+                    var commandBuilder = new SQLiteCommandBuilder(adapter); 
 
                     var dsUsers = new DataSet();
                     adapter.Fill(dsUsers, "Users");
@@ -132,12 +206,10 @@ namespace TickIT
                     DataRow row = rows[0];
                     row["IsInactive"] = newStatus;
 
-                    // Przypisz własny UpdateCommand
                     adapter.UpdateCommand = new SQLiteCommand(updateQuery, conn);
                     adapter.UpdateCommand.Parameters.Add("@IsInactive", DbType.Int32, 0, "IsInactive");
                     adapter.UpdateCommand.Parameters.Add("@UserID", DbType.Int32, 0, "UserID");
 
-                    // W razie potrzeby: AcceptChangesDuringUpdate = false
                     adapter.Update(dsUsers, "Users");
 
                     string msg = newStatus == 1 ? "Użytkownik został dezaktywowany." : "Użytkownik został aktywowany.";
@@ -155,81 +227,6 @@ namespace TickIT
             }
         }
 
-
-
-
-        private void btn_AddUser_Click(object sender, EventArgs e)
-        {
-            string connectionString = "Data Source=TickIT.db;Version=3;";
-
-            string firstName = txtFirstName.Text.Trim();
-            string lastName = txtLastName.Text.Trim();
-            string email = txtEmail.Text.Trim();
-            string phone = txtPhone.Text.Trim();
-            string role = cmbRole.SelectedItem?.ToString();
-            string password = "1234"; 
-
-            if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName) ||
-                string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(role))
-            {
-                MessageBox.Show("Wypełnij wszystkie wymagane pola.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            try
-            {
-                using (SQLiteConnection conn = new SQLiteConnection(connectionString))
-                {
-                    conn.Open();
-
-                    string checkQuery = "SELECT COUNT(*) FROM Users WHERE Email = @Email";
-                    using (SQLiteCommand checkCmd = new SQLiteCommand(checkQuery, conn))
-                    {
-                        checkCmd.Parameters.AddWithValue("@Email", email);
-                        long count = (long)checkCmd.ExecuteScalar();
-                        if (count > 0)
-                        {
-                            MessageBox.Show("Użytkownik o podanym adresie email już istnieje.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            return;
-                        }
-                    }
-
-                    string insertQuery = @"INSERT INTO Users (FirstName, LastName, Email, Phone, Role, PasswordHash, IsInactive, IsPasswordChangeRequired) 
-                                   VALUES (@FirstName, @LastName, @Email, @Phone, @Role, @PasswordHash, 0, 1)";
-
-                    using (SQLiteDataAdapter adapter = new SQLiteDataAdapter())
-                    {
-                        adapter.InsertCommand = new SQLiteCommand(insertQuery, conn);
-                        adapter.InsertCommand.Parameters.AddWithValue("@FirstName", firstName);
-                        adapter.InsertCommand.Parameters.AddWithValue("@LastName", lastName);
-                        adapter.InsertCommand.Parameters.AddWithValue("@Email", email);
-                        adapter.InsertCommand.Parameters.AddWithValue("@Phone", phone);
-                        adapter.InsertCommand.Parameters.AddWithValue("@Role", role);
-                        adapter.InsertCommand.Parameters.AddWithValue("@PasswordHash", password); 
-
-                        int rows = adapter.InsertCommand.ExecuteNonQuery();
-
-                        if (rows > 0)
-                        {
-                            MessageBox.Show("Użytkownik został dodany.", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            RefreshDataGridView(); 
-                        }
-                        else
-                        {
-                            MessageBox.Show("Nie udało się dodać użytkownika.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                }
-            }
-            catch (SQLiteException ex)
-            {
-                MessageBox.Show("Błąd SQLite: " + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Błąd: " + ex.Message);
-            }
-        }
 
         private void dataGridView_Users_CellClick(object sender, DataGridViewCellEventArgs e)
         {

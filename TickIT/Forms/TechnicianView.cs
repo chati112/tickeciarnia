@@ -396,7 +396,7 @@ namespace TickIT
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonResolve_Click(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow == null)
             {
@@ -416,7 +416,6 @@ namespace TickIT
                 {
                     conn.Open();
 
-                    // Sprawdzenie, czy zgłoszenie ma przypisanego technika i czy jest przypisane do aktualnego
                     string checkAssignmentQuery = "SELECT TechnicianID FROM Tickets WHERE TicketID = @TicketID";
                     using (SQLiteCommand checkCmd = new SQLiteCommand(checkAssignmentQuery, conn))
                     {
@@ -482,8 +481,10 @@ namespace TickIT
             {
                 MessageBox.Show("Wystąpił błąd: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
+
+
+
 
         private void btn_DeleteComment_Click(object sender, EventArgs e)
         {
@@ -502,10 +503,12 @@ namespace TickIT
                 using (SQLiteConnection conn = new SQLiteConnection(connectionString))
                 {
                     conn.Open();
+
                     string checkQuery = @"
                     SELECT COUNT(*) 
                     FROM Comments
                     WHERE TicketID = (SELECT TicketID FROM Comments WHERE CommentID = @CommentID)";
+
                     using (SQLiteCommand checkCmd = new SQLiteCommand(checkQuery, conn))
                     {
                         checkCmd.Parameters.AddWithValue("@CommentID", commentIdToDelete);
@@ -541,6 +544,7 @@ namespace TickIT
             }
         }
 
+        
     }
 }
 
